@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Security Pills</title>
+    <link>https://securitypills.github.io/</link>
+    <description>Recent content on Security Pills</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 28 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://securitypills.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ethernaut - Level 06 - Delegation</title>
+      <link>https://securitypills.github.io/articles/ethernaut-6-delegation/</link>
+      <pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://securitypills.github.io/articles/ethernaut-6-delegation/</guid>
+      <description>// SPDX-License-Identifier: MIT pragma solidity ^0.6.0; contract Delegate { address public owner; constructor(address _owner) public { owner = _owner; } function pwn() public { owner = msg.sender; } } contract Delegation { address public owner; Delegate delegate; constructor(address _delegateAddress) public { delegate = Delegate(_delegateAddress); owner = msg.sender; } fallback() external { (bool result,) = address(delegate).delegatecall(msg.data); if (result) { this; } } } FIGURE 1 &amp;ndash; Contract&amp;rsquo;s source code
+Where is the vulnerability?</description>
+    </item>
+    
+    <item>
+      <title>Security Pills - Issue 5</title>
+      <link>https://securitypills.github.io/portfolio/sp-issue-5/</link>
+      <pubDate>Mon, 25 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://securitypills.github.io/portfolio/sp-issue-5/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Security Pills - Issue 4</title>
+      <link>https://securitypills.github.io/portfolio/sp-issue-4/</link>
+      <pubDate>Mon, 18 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://securitypills.github.io/portfolio/sp-issue-4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Security Pills - Issue 3</title>
+      <link>https://securitypills.github.io/portfolio/sp-issue-3/</link>
+      <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://securitypills.github.io/portfolio/sp-issue-3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Security Pills - Issue 2</title>
+      <link>https://securitypills.github.io/portfolio/sp-issue-2/</link>
+      <pubDate>Mon, 04 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://securitypills.github.io/portfolio/sp-issue-2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Security Pills - Issue 1</title>
+      <link>https://securitypills.github.io/portfolio/sp-issue-1/</link>
+      <pubDate>Mon, 27 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://securitypills.github.io/portfolio/sp-issue-1/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

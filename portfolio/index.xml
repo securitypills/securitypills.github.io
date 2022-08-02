@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Newsletter on Security Pills</title>
+    <link>https://securitypills.github.io/portfolio/</link>
+    <description>Recent content in Newsletter on Security Pills</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 25 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://securitypills.github.io/portfolio/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Security Pills - Issue 5</title>
+      <link>https://securitypills.github.io/portfolio/sp-issue-5/</link>
+      <pubDate>Mon, 25 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://securitypills.github.io/portfolio/sp-issue-5/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Security Pills - Issue 4</title>
+      <link>https://securitypills.github.io/portfolio/sp-issue-4/</link>
+      <pubDate>Mon, 18 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://securitypills.github.io/portfolio/sp-issue-4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Security Pills - Issue 3</title>
+      <link>https://securitypills.github.io/portfolio/sp-issue-3/</link>
+      <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://securitypills.github.io/portfolio/sp-issue-3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Security Pills - Issue 2</title>
+      <link>https://securitypills.github.io/portfolio/sp-issue-2/</link>
+      <pubDate>Mon, 04 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://securitypills.github.io/portfolio/sp-issue-2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Security Pills - Issue 1</title>
+      <link>https://securitypills.github.io/portfolio/sp-issue-1/</link>
+      <pubDate>Mon, 27 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://securitypills.github.io/portfolio/sp-issue-1/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
