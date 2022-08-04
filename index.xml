@@ -6,7 +6,30 @@
     <description>Recent content on Security Pills</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 01 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://securitypills.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 03 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://securitypills.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ethernaut Challenges</title>
+      <link>https://securitypills.github.io/articles/ethernaut/</link>
+      <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://securitypills.github.io/articles/ethernaut/</guid>
+      <description>Ethernaut is OpenZeppelin Web3/Solidity based wargame to learn about Ethereum smart contract security and become familiar with programming principles in Solidity.
+Although the game was launched few years ago it has become a good place to start for those who are interested on security and smart contracts.
+Challenges are currently running on the Rinkeby testnet and you will require to use a Rinkey Faucet to get free testnet ETH and test the smart contracts.</description>
+    </item>
+    
+    <item>
+      <title>Ethernaut - Level 01 - Fallback</title>
+      <link>https://securitypills.github.io/articles/ethernaut-1-fallback/</link>
+      <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://securitypills.github.io/articles/ethernaut-1-fallback/</guid>
+      <description>Image courtesy of OpenZeppelin
+Ethernaut 01 - Fallback The first level from Ethernaut is pretty straightforward and we will use it to become familiar with some Solidity concepts and the Brownie framework that we will use to complete this challenge.
+The code for the smart contract that we must exploit is shown above:
+// SPDX-License-Identifier: MIT pragma solidity ^0.6.0; import &amp;#39;@openzeppelin/contracts/math/SafeMath.sol&amp;#39;; contract Fallback { using SafeMath for uint256; mapping(address =&amp;gt; uint) public contributions; address payable public owner; constructor() public { owner = msg.</description>
+    </item>
+    
     <item>
       <title>Security Pills - Issue 6</title>
       <link>https://securitypills.github.io/portfolio/sp-issue-6/</link>
@@ -14,16 +37,6 @@
       
       <guid>https://securitypills.github.io/portfolio/sp-issue-6/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>Ethernaut - Level 06 - Delegation</title>
-      <link>https://securitypills.github.io/articles/ethernaut-6-delegation/</link>
-      <pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://securitypills.github.io/articles/ethernaut-6-delegation/</guid>
-      <description>// SPDX-License-Identifier: MIT pragma solidity ^0.6.0; contract Delegate { address public owner; constructor(address _owner) public { owner = _owner; } function pwn() public { owner = msg.sender; } } contract Delegation { address public owner; Delegate delegate; constructor(address _delegateAddress) public { delegate = Delegate(_delegateAddress); owner = msg.sender; } fallback() external { (bool result,) = address(delegate).delegatecall(msg.data); if (result) { this; } } } FIGURE 1 &amp;ndash; Contract&amp;rsquo;s source code
-Where is the vulnerability?</description>
     </item>
     
     <item>

