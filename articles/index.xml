@@ -13,7 +13,8 @@
       <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
       
       <guid>https://securitypills.github.io/articles/ethernaut/</guid>
-      <description>Ethernaut is OpenZeppelin Web3/Solidity based wargame to learn about Ethereum smart contract security and become familiar with programming principles in Solidity.
+      <description>Please read This is a work in progress article that will receive updates as we continue publishing detailed walkthroughs for each level.
+Ethernaut is OpenZeppelin Web3/Solidity based wargame to learn about Ethereum smart contract security and become familiar with programming principles in Solidity.
 Although the game was launched few years ago it has become a good place to start for those who are interested on security and smart contracts.
 Challenges are currently running on the Rinkeby testnet and you will require to use a Rinkey Faucet to get free testnet ETH and test the smart contracts.</description>
     </item>
@@ -28,6 +29,17 @@ Challenges are currently running on the Rinkeby testnet and you will require to 
 Ethernaut 01 - Fallback The first level from Ethernaut is pretty straightforward and we will use it to become familiar with some Solidity concepts and the Brownie framework that we will use to complete this challenge.
 The code for the smart contract that we must exploit is shown above:
 // SPDX-License-Identifier: MIT pragma solidity ^0.6.0; import &amp;#39;@openzeppelin/contracts/math/SafeMath.sol&amp;#39;; contract Fallback { using SafeMath for uint256; mapping(address =&amp;gt; uint) public contributions; address payable public owner; constructor() public { owner = msg.</description>
+    </item>
+    
+    <item>
+      <title>Ethernaut - Level 02 - Fallout</title>
+      <link>https://securitypills.github.io/articles/ethernaut-2-fallout/</link>
+      <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://securitypills.github.io/articles/ethernaut-2-fallout/</guid>
+      <description>Image courtesy of OpenZeppelin
+Ethernaut 02 - Fallout The goal for this level is to claim ownership of the contract, which has the following implementation:
+// SPDX-License-Identifier: MIT pragma solidity ^0.6.0; import &amp;#39;@openzeppelin/contracts/math/SafeMath.sol&amp;#39;; contract Fallout { using SafeMath for uint256; mapping (address =&amp;gt; uint) allocations; address payable public owner; /* constructor */ function Fal1out() public payable { owner = msg.sender; allocations[owner] = msg.value; } modifier onlyOwner { require( msg.sender == owner, &amp;#34;caller is not the owner&amp;#34; ); _; } function allocate() public payable { allocations[msg.</description>
     </item>
     
   </channel>

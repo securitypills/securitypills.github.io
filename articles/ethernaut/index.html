@@ -11,7 +11,8 @@
     Ethernaut Challenges - Security Pills
   </title>
 
-  <meta name="description" content="Ethernaut is OpenZeppelin Web3/Solidity based wargame to learn about Ethereum smart contract security and become familiar with programming principles in Solidity.
+  <meta name="description" content="Please read This is a work in progress article that will receive updates as we continue publishing detailed walkthroughs for each level.
+Ethernaut is OpenZeppelin Web3/Solidity based wargame to learn about Ethereum smart contract security and become familiar with programming principles in Solidity.
 Although the game was launched few years ago it has become a good place to start for those who are interested on security and smart contracts.
 Challenges are currently running on the Rinkeby testnet and you will require to use a Rinkey Faucet to get free testnet ETH and test the smart contracts." /><meta name="generator" content="Hugo 0.101.0" />
 
@@ -21,7 +22,8 @@ Challenges are currently running on the Rinkeby testnet and you will require to 
   
 
   <meta property="og:title" content="Ethernaut Challenges" />
-<meta property="og:description" content="Ethernaut is OpenZeppelin Web3/Solidity based wargame to learn about Ethereum smart contract security and become familiar with programming principles in Solidity.
+<meta property="og:description" content="Please read This is a work in progress article that will receive updates as we continue publishing detailed walkthroughs for each level.
+Ethernaut is OpenZeppelin Web3/Solidity based wargame to learn about Ethereum smart contract security and become familiar with programming principles in Solidity.
 Although the game was launched few years ago it has become a good place to start for those who are interested on security and smart contracts.
 Challenges are currently running on the Rinkeby testnet and you will require to use a Rinkey Faucet to get free testnet ETH and test the smart contracts." />
 <meta property="og:type" content="article" />
@@ -33,25 +35,28 @@ Challenges are currently running on the Rinkeby testnet and you will require to 
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Ethernaut Challenges"/>
-<meta name="twitter:description" content="Ethernaut is OpenZeppelin Web3/Solidity based wargame to learn about Ethereum smart contract security and become familiar with programming principles in Solidity.
+<meta name="twitter:description" content="Please read This is a work in progress article that will receive updates as we continue publishing detailed walkthroughs for each level.
+Ethernaut is OpenZeppelin Web3/Solidity based wargame to learn about Ethereum smart contract security and become familiar with programming principles in Solidity.
 Although the game was launched few years ago it has become a good place to start for those who are interested on security and smart contracts.
 Challenges are currently running on the Rinkeby testnet and you will require to use a Rinkey Faucet to get free testnet ETH and test the smart contracts."/>
 
 
   <meta itemprop="name" content="Ethernaut Challenges">
-<meta itemprop="description" content="Ethernaut is OpenZeppelin Web3/Solidity based wargame to learn about Ethereum smart contract security and become familiar with programming principles in Solidity.
+<meta itemprop="description" content="Please read This is a work in progress article that will receive updates as we continue publishing detailed walkthroughs for each level.
+Ethernaut is OpenZeppelin Web3/Solidity based wargame to learn about Ethereum smart contract security and become familiar with programming principles in Solidity.
 Although the game was launched few years ago it has become a good place to start for those who are interested on security and smart contracts.
 Challenges are currently running on the Rinkeby testnet and you will require to use a Rinkey Faucet to get free testnet ETH and test the smart contracts."><meta itemprop="datePublished" content="2022-08-03T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-08-03T00:00:00+00:00" />
-<meta itemprop="wordCount" content="450">
+<meta itemprop="wordCount" content="314">
 <meta itemprop="keywords" content="" />
 
   <meta itemprop="name" content="Ethernaut Challenges">
-<meta itemprop="description" content="Ethernaut is OpenZeppelin Web3/Solidity based wargame to learn about Ethereum smart contract security and become familiar with programming principles in Solidity.
+<meta itemprop="description" content="Please read This is a work in progress article that will receive updates as we continue publishing detailed walkthroughs for each level.
+Ethernaut is OpenZeppelin Web3/Solidity based wargame to learn about Ethereum smart contract security and become familiar with programming principles in Solidity.
 Although the game was launched few years ago it has become a good place to start for those who are interested on security and smart contracts.
 Challenges are currently running on the Rinkeby testnet and you will require to use a Rinkey Faucet to get free testnet ETH and test the smart contracts."><meta itemprop="datePublished" content="2022-08-03T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-08-03T00:00:00+00:00" />
-<meta itemprop="wordCount" content="450">
+<meta itemprop="wordCount" content="314">
 <meta itemprop="keywords" content="" />
 </head><body class="flex relative h-full min-h-screen"><aside
   class="will-change-transform transform transition-transform -translate-x-full absolute top-0 left-0 md:relative md:translate-x-0 w-3/4 md:w-60 h-full min-h-screen p-3 bg-slate-50 dark:bg-slate-800 border-r border-slate-200 dark:border-slate-700 flex flex-col gap-2.5 z-20 sidebar">
@@ -164,7 +169,8 @@ Challenges are currently running on the Rinkeby testnet and you will require to 
         <h3 class="text-lg font-semibold mb-0.5">Ethernaut Challenges</h3>
         <div
           class="text-sm  text-slate-400  line-clamp-2">
-          Ethernaut is OpenZeppelin Web3/Solidity based wargame to learn about Ethereum smart contract security and become familiar with programming principles in Solidity.
+          Please read This is a work in progress article that will receive updates as we continue publishing detailed walkthroughs for each level.
+Ethernaut is OpenZeppelin Web3/Solidity based wargame to learn about Ethereum smart contract security and become familiar with programming principles in Solidity.
 Although the game was launched few years ago it has become a good place to start for those who are interested on security and smart contracts.
 Challenges are currently running on the Rinkeby testnet and you will require to use a Rinkey Faucet to get free testnet ETH and test the smart contracts.
         </div>
@@ -183,6 +189,19 @@ The code for the smart contract that we must exploit is shown above:
 // SPDX-License-Identifier: MIT pragma solidity ^0.6.0; import &#39;@openzeppelin/contracts/math/SafeMath.sol&#39;; contract Fallback { using SafeMath for uint256; mapping(address =&gt; uint) public contributions; address payable public owner; constructor() public { owner = msg.
         </div>
       </a>
+      
+      <a class="block px-3 py-4  hover:bg-slate-200 dark:hover:bg-slate-700 "
+        href="/articles/ethernaut-2-fallout/">
+        
+        
+        <h3 class="text-lg font-semibold mb-0.5">Ethernaut - Level 02 - Fallout</h3>
+        <div
+          class="text-sm  text-slate-500 dark:text-slate-400  line-clamp-2">
+          Image courtesy of OpenZeppelin
+Ethernaut 02 - Fallout The goal for this level is to claim ownership of the contract, which has the following implementation:
+// SPDX-License-Identifier: MIT pragma solidity ^0.6.0; import &#39;@openzeppelin/contracts/math/SafeMath.sol&#39;; contract Fallout { using SafeMath for uint256; mapping (address =&gt; uint) allocations; address payable public owner; /* constructor */ function Fal1out() public payable { owner = msg.sender; allocations[owner] = msg.value; } modifier onlyOwner { require( msg.sender == owner, &#34;caller is not the owner&#34; ); _; } function allocate() public payable { allocations[msg.
+        </div>
+      </a>
       </div>
     </section>
 
@@ -197,10 +216,12 @@ The code for the smart contract that we must exploit is shown above:
 
       
 
-      <p><figure><img src="../images/ethernaut.png"/>
+      <h3 id="please-read">Please read</h3>
+<p>This is a work in progress article that will receive updates as we continue publishing detailed walkthroughs for each level.</p>
+<figure><img src="../images/ethernaut.png"/>
 </figure>
 
-<a href="https://ethernaut.openzeppelin.com/"  target="_blank" rel="noopener" >Ethernaut</a> is OpenZeppelin Web3/Solidity based wargame to learn about Ethereum smart contract security and become familiar with programming principles in <a href="https://docs.soliditylang.org/en/v0.8.15/"  target="_blank" rel="noopener" >Solidity</a>.</p>
+<p><a href="https://ethernaut.openzeppelin.com/"  target="_blank" rel="noopener" >Ethernaut</a> is OpenZeppelin Web3/Solidity based wargame to learn about Ethereum smart contract security and become familiar with programming principles in <a href="https://docs.soliditylang.org/en/v0.8.15/"  target="_blank" rel="noopener" >Solidity</a>.</p>
 <p>Although the game was launched few years ago it has become a good place to start for those who are interested on security and smart contracts.</p>
 <p>Challenges are currently running on the <a href="https://www.alchemy.com/overviews/rinkeby-testnet"  target="_blank" rel="noopener" >Rinkeby testnet</a> and you will require to use a Rinkey Faucet to get free testnet ETH and test the smart contracts.</p>
 <p>This article is my little contribution to those interested on learning the basics on Ethereum smart contract security by providing  guidance and explanations on how to solve each Ethernaut challenge using <a href="https://github.com/eth-brownie/brownie"  target="_blank" rel="noopener" >brownie framework</a>. There are different approaches and frameworks that can be used, rather than the approach you will find here, so feel free to explore and learn from others.</p>
@@ -213,36 +234,7 @@ The code for the smart contract that we must exploit is shown above:
 <p>You can read a walkthrough for this challenge <a href="../ethernaut-1-fallback" >here</a>.</p>
 <h3 id="0x2-fallout">0x2. Fallout</h3>
 <p>This vulnerability is unlikely to occur on recent versions of Solidity. The problem with this contract is a typo in the <code>Fal1out</code> function, which can be called by anyone, thus becoming the contract&rsquo;s owner.</p>
-<p>You can read a walthrough for this challenge here</p>
-<h3 id="0x3-coin-flip">0x3. Coin Flip</h3>
-<h3 id="0x4-telephone">0x4. Telephone</h3>
-<h3 id="0x5-token">0x5. Token</h3>
-<h3 id="0x6-delegation">0x6. Delegation</h3>
-<h3 id="0x7-force">0x7. Force</h3>
-<h3 id="0x8-vault">0x8. Vault</h3>
-<h3 id="0x9-king">0x9. King</h3>
-<p>This challenge recreates the famous <a href="https://www.kingoftheether.com/thrones/kingoftheether/index.html"  target="_blank" rel="noopener" >King of the Ether</a> game (actually affected by a <a href="http://www.kingoftheether.com/postmortem.html"  target="_blank" rel="noopener" >similar vulnerability</a>. The purpose of this challenge is to become the new king and avoid anyone else claiming their right to become owners. This level will help us understand that transactions to external contracts are not always successful and will require from us to write a contract with no <code>fallback</code> nor <code>receive</code> functions so it does not accept transfers from other users attempting to gain ownership:</p>
-<div class="highlight" lineos="table" lineofstart="1"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-solidity" data-lang="solidity"><span style="display:flex;"><span><span style="color:#75715e">// SPDX-License-Identifier: MIT
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">pragma solidity</span> <span style="color:#f92672">^</span><span style="color:#ae81ff">0</span>.<span style="color:#ae81ff">6</span>.<span style="color:#ae81ff">0</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">contract</span> <span style="color:#a6e22e">BecomeKing</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">address</span> owner;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">constructor</span>() <span style="color:#66d9ef">public</span> {
-</span></span><span style="display:flex;"><span>        owner <span style="color:#f92672">=</span> msg.sender;
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">sendEther</span>(<span style="color:#66d9ef">address</span> <span style="color:#66d9ef">payable</span> _dest) <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">payable</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Add ether when invoking a contract
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        (<span style="color:#66d9ef">bool</span> sent, ) <span style="color:#f92672">=</span> _dest.call{value<span style="color:#f92672">:</span> <span style="color:#66d9ef">address</span>(this).balance}(<span style="color:#e6db74">&#34;&#34;</span>);
-</span></span><span style="display:flex;"><span>        require(sent, <span style="color:#e6db74">&#34;Failed to send ether!&#34;</span>);
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex; background-color:#3c3d38"><span>    receive () <span style="color:#66d9ef">external</span> <span style="color:#66d9ef">payable</span> {
-</span></span><span style="display:flex; background-color:#3c3d38"><span>        revert(<span style="color:#e6db74">&#39;Thanks, but NOPE&#39;</span>);
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>You can read a walkthrough for this challenge <a href="../ethernaut-9-king" >here</a>.</p>
+<p>You can read a walkthrough for this challenge <a href="../ethernaut-2-fallout" >here</a>.</p>
 
     </article>
   </div>
