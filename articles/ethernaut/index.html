@@ -47,7 +47,7 @@ Ethernaut is OpenZeppelin Web3/Solidity based wargame to learn about Ethereum sm
 Although the game was launched few years ago it has become a good place to start for those who are interested on security and smart contracts.
 Challenges are currently running on the Rinkeby testnet and you will require to use a Rinkey Faucet to get free testnet ETH and test the smart contracts."><meta itemprop="datePublished" content="2022-08-03T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-08-03T00:00:00+00:00" />
-<meta itemprop="wordCount" content="314">
+<meta itemprop="wordCount" content="377">
 <meta itemprop="keywords" content="" />
 
   <meta itemprop="name" content="Ethernaut Challenges">
@@ -56,7 +56,7 @@ Ethernaut is OpenZeppelin Web3/Solidity based wargame to learn about Ethereum sm
 Although the game was launched few years ago it has become a good place to start for those who are interested on security and smart contracts.
 Challenges are currently running on the Rinkeby testnet and you will require to use a Rinkey Faucet to get free testnet ETH and test the smart contracts."><meta itemprop="datePublished" content="2022-08-03T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-08-03T00:00:00+00:00" />
-<meta itemprop="wordCount" content="314">
+<meta itemprop="wordCount" content="377">
 <meta itemprop="keywords" content="" />
 </head><body class="flex relative h-full min-h-screen"><aside
   class="will-change-transform transform transition-transform -translate-x-full absolute top-0 left-0 md:relative md:translate-x-0 w-3/4 md:w-60 h-full min-h-screen p-3 bg-slate-50 dark:bg-slate-800 border-r border-slate-200 dark:border-slate-700 flex flex-col gap-2.5 z-20 sidebar">
@@ -162,6 +162,19 @@ Challenges are currently running on the Rinkeby testnet and you will require to 
     </a>
     <div class="space-y-2.5">
       
+      <a class="block px-3 py-4  hover:bg-slate-200 dark:hover:bg-slate-700 "
+        href="/articles/ethernaut-3-coinflip/">
+        
+        
+        <h3 class="text-lg font-semibold mb-0.5">Ethernaut - Level 03 - Coinflip</h3>
+        <div
+          class="text-sm  text-slate-500 dark:text-slate-400  line-clamp-2">
+          Image courtesy of OpenZeppelin
+Ethernaut 03 - Coinflip The third level in Ethernaut, CoinFlip, is a good exercise that will teach you how to exploit pseudo randomness implementations in smart contracts. This contract will require you to correctly guess the outcome of a coin flip ten times in a row:
+// SPDX-License-Identifier: MIT pragma solidity ^0.6.0; import &#39;@openzeppelin/contracts/math/SafeMath.sol&#39;; contract CoinFlip { using SafeMath for uint256; uint256 public consecutiveWins; uint256 lastHash; uint256 FACTOR = 57896044618658097711785492504343953926634992332820282019728792003956564819968; constructor() public { consecutiveWins = 0; } function flip(bool _guess) public returns (bool) { uint256 blockValue = uint256(blockhash(block.
+        </div>
+      </a>
+      
       <a class="block px-3 py-4  bg-slate-900 dark:bg-slate-700 text-slate-50 "
         href="/articles/ethernaut/">
         
@@ -235,6 +248,9 @@ Ethernaut 02 - Fallout The goal for this level is to claim ownership of the cont
 <h3 id="0x2-fallout">0x2. Fallout</h3>
 <p>This vulnerability is unlikely to occur on recent versions of Solidity. The problem with this contract is a typo in the <code>Fal1out</code> function, which can be called by anyone, thus becoming the contract&rsquo;s owner.</p>
 <p>You can read a walkthrough for this challenge <a href="../ethernaut-2-fallout" >here</a>.</p>
+<h3 id="0x3-coinflip">0x3 Coinflip</h3>
+<p>The goal in this challenge is to guess the coin flip ten times in a row. The contract uses the previous blockhash as the flip outcome. This challenge can be solved by creating a similar contract that mimics the same coin flipping logic and calls Ethernaut&rsquo;s original contract with the result obtained.</p>
+<p>You can read a walkthrough for this challenge <a href="../ethernaut-3-coinflip" >here</a>.</p>
 
     </article>
   </div>

@@ -6,7 +6,18 @@
     <description>Recent content on Security Pills</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 08 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://securitypills.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 11 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://securitypills.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ethernaut - Level 03 - Coinflip</title>
+      <link>https://securitypills.github.io/articles/ethernaut-3-coinflip/</link>
+      <pubDate>Thu, 11 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://securitypills.github.io/articles/ethernaut-3-coinflip/</guid>
+      <description>Image courtesy of OpenZeppelin
+Ethernaut 03 - Coinflip The third level in Ethernaut, CoinFlip, is a good exercise that will teach you how to exploit pseudo randomness implementations in smart contracts. This contract will require you to correctly guess the outcome of a coin flip ten times in a row:
+// SPDX-License-Identifier: MIT pragma solidity ^0.6.0; import &amp;#39;@openzeppelin/contracts/math/SafeMath.sol&amp;#39;; contract CoinFlip { using SafeMath for uint256; uint256 public consecutiveWins; uint256 lastHash; uint256 FACTOR = 57896044618658097711785492504343953926634992332820282019728792003956564819968; constructor() public { consecutiveWins = 0; } function flip(bool _guess) public returns (bool) { uint256 blockValue = uint256(blockhash(block.</description>
+    </item>
+    
     <item>
       <title>Security Pills - Issue 7</title>
       <link>https://securitypills.github.io/portfolio/sp-issue-7/</link>
