@@ -6,7 +6,16 @@
     <description>Recent content on Security Pills</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 11 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://securitypills.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 15 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://securitypills.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Security Pills - Issue 8</title>
+      <link>https://securitypills.github.io/portfolio/sp-issue-8/</link>
+      <pubDate>Mon, 15 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://securitypills.github.io/portfolio/sp-issue-8/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Ethernaut - Level 03 - Coinflip</title>
       <link>https://securitypills.github.io/articles/ethernaut-3-coinflip/</link>
