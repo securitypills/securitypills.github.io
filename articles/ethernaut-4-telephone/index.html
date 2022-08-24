@@ -43,7 +43,7 @@ Ethernaut 04 - Telephone This level from Ethernaut, called Telephone, is a good 
 Ethernaut 04 - Telephone This level from Ethernaut, called Telephone, is a good exercise to learn the nuances between tx.origin and msg.sender and why you should never use tx.origin for authentication purposes:
 // SPDX-License-Identifier: MIT pragma solidity ^0.6.0; contract Telephone { address public owner; constructor() public { owner = msg.sender; } function changeOwner(address _owner) public { if (tx.origin != msg.sender) { owner = _owner; } } } Solidity has a global variable, tx."><meta itemprop="datePublished" content="2022-08-24T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-08-24T00:00:00+00:00" />
-<meta itemprop="wordCount" content="647">
+<meta itemprop="wordCount" content="646">
 <meta itemprop="keywords" content="" />
 
   <meta itemprop="name" content="Ethernaut - Level 04 - Telephone">
@@ -51,7 +51,7 @@ Ethernaut 04 - Telephone This level from Ethernaut, called Telephone, is a good 
 Ethernaut 04 - Telephone This level from Ethernaut, called Telephone, is a good exercise to learn the nuances between tx.origin and msg.sender and why you should never use tx.origin for authentication purposes:
 // SPDX-License-Identifier: MIT pragma solidity ^0.6.0; contract Telephone { address public owner; constructor() public { owner = msg.sender; } function changeOwner(address _owner) public { if (tx.origin != msg.sender) { owner = _owner; } } } Solidity has a global variable, tx."><meta itemprop="datePublished" content="2022-08-24T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-08-24T00:00:00+00:00" />
-<meta itemprop="wordCount" content="647">
+<meta itemprop="wordCount" content="646">
 <meta itemprop="keywords" content="" />
 </head><body class="flex relative h-full min-h-screen"><aside
   class="will-change-transform transform transition-transform -translate-x-full absolute top-0 left-0 md:relative md:translate-x-0 w-3/4 md:w-60 h-full min-h-screen p-3 bg-slate-50 dark:bg-slate-800 border-r border-slate-200 dark:border-slate-700 flex flex-col gap-2.5 z-20 sidebar">
@@ -328,7 +328,7 @@ Ethernaut 02 - Fallout The goal for this level is to claim ownership of the cont
 <li>As <code>tx.origin</code> differs from <code>msg.sender</code>, our exploit will pass the <code>if</code> statement and execute the <code>owner = _owner;</code> statement, assigning us as the contract&rsquo;s legitimate owner</li>
 </ul>
 <h2 id="takeaways">Takeaways</h2>
-<p>The most valuable takeaway from this challenge is to learn to do not use <code>tx.origin</code> for authorization purposes, additionally, by using <code>tx.origin</code> you are limiting interoperability between contracts, since contracts using <code>tx.origin</code> cannot be used by other contracts (<em>a contract can never be the <code>tx.origin</code></em>). Instead, you should use <code>msg.sender</code> for authorization.</p>
+<p>The most valuable takeaway from this challenge is to learn to not use <code>tx.origin</code> for authorization purposes, additionally, by using <code>tx.origin</code> you are limiting interoperability between contracts, since contracts using <code>tx.origin</code> cannot be used by other contracts (<em>a contract can never be the <code>tx.origin</code></em>). Instead, you should use <code>msg.sender</code> for authorization.</p>
 
     </article>
   </div>
