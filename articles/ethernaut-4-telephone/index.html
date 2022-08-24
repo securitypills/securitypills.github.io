@@ -43,7 +43,7 @@ Ethernaut 04 - Telephone This level from Ethernaut, called Telephone, is a good 
 Ethernaut 04 - Telephone This level from Ethernaut, called Telephone, is a good exercise to learn the nuances between tx.origin and msg.sender and why you should never use tx.origin for authentication purposes:
 // SPDX-License-Identifier: MIT pragma solidity ^0.6.0; contract Telephone { address public owner; constructor() public { owner = msg.sender; } function changeOwner(address _owner) public { if (tx.origin != msg.sender) { owner = _owner; } } } Solidity has a global variable, tx."><meta itemprop="datePublished" content="2022-08-24T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-08-24T00:00:00+00:00" />
-<meta itemprop="wordCount" content="648">
+<meta itemprop="wordCount" content="647">
 <meta itemprop="keywords" content="" />
 
   <meta itemprop="name" content="Ethernaut - Level 04 - Telephone">
@@ -51,7 +51,7 @@ Ethernaut 04 - Telephone This level from Ethernaut, called Telephone, is a good 
 Ethernaut 04 - Telephone This level from Ethernaut, called Telephone, is a good exercise to learn the nuances between tx.origin and msg.sender and why you should never use tx.origin for authentication purposes:
 // SPDX-License-Identifier: MIT pragma solidity ^0.6.0; contract Telephone { address public owner; constructor() public { owner = msg.sender; } function changeOwner(address _owner) public { if (tx.origin != msg.sender) { owner = _owner; } } } Solidity has a global variable, tx."><meta itemprop="datePublished" content="2022-08-24T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-08-24T00:00:00+00:00" />
-<meta itemprop="wordCount" content="648">
+<meta itemprop="wordCount" content="647">
 <meta itemprop="keywords" content="" />
 </head><body class="flex relative h-full min-h-screen"><aside
   class="will-change-transform transform transition-transform -translate-x-full absolute top-0 left-0 md:relative md:translate-x-0 w-3/4 md:w-60 h-full min-h-screen p-3 bg-slate-50 dark:bg-slate-800 border-r border-slate-200 dark:border-slate-700 flex flex-col gap-2.5 z-20 sidebar">
@@ -269,8 +269,8 @@ Ethernaut 02 - Fallout The goal for this level is to claim ownership of the cont
 </blockquote>
 <p>This means that <code>tx.origin</code> will refers to the address of an account that sent a transaction, and <code>msg.sender</code> refers to the address of an account or a smart contract that is directly calling a smart contract’s function.</p>
 <figure><img src="../images/txorigin-msgsender.png"
-         alt="Image courtesy of OpenZeppelin"/><figcaption>
-            <p>Image courtesy of OpenZeppelin</p>
+         alt="tx.origin vs msg.sender"/><figcaption>
+            <p><code>tx.origin</code> vs <code>msg.sender</code></p>
         </figcaption>
 </figure>
 
