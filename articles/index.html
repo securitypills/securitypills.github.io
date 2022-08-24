@@ -133,6 +133,17 @@
       <h2 class="font-bold mb-5 py-1 pl-12 pr-3 md:px-3">Articles</h2>
     </a>
     <div class="space-y-2.5">
+      <a class="block px-3 py-4 hover:bg-slate-200 dark:hover:bg-slate-700" href="/articles/ethernaut-4-telephone/">
+
+        
+        
+        <h3 class="text-lg font-semibold mb-0.5">Ethernaut - Level 04 - Telephone</h3>
+        <div class="text-sm text-slate-500 dark:text-slate-400 line-clamp-2">
+          Image courtesy of OpenZeppelin
+Ethernaut 04 - Telephone This level from Ethernaut, called Telephone, is a good exercise to learn the nuances between tx.origin and msg.sender and why you should never use tx.origin for authentication purposes:
+// SPDX-License-Identifier: MIT pragma solidity ^0.6.0; contract Telephone { address public owner; constructor() public { owner = msg.sender; } function changeOwner(address _owner) public { if (tx.origin != msg.sender) { owner = _owner; } } } Solidity has a global variable, tx.
+        </div>
+      </a>
       <a class="block px-3 py-4 hover:bg-slate-200 dark:hover:bg-slate-700" href="/articles/ethernaut-3-coinflip/">
 
         

@@ -6,7 +6,18 @@
     <description>Recent content in Articles on Security Pills</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 11 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://securitypills.github.io/articles/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 24 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://securitypills.github.io/articles/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ethernaut - Level 04 - Telephone</title>
+      <link>https://securitypills.github.io/articles/ethernaut-4-telephone/</link>
+      <pubDate>Wed, 24 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://securitypills.github.io/articles/ethernaut-4-telephone/</guid>
+      <description>Image courtesy of OpenZeppelin
+Ethernaut 04 - Telephone This level from Ethernaut, called Telephone, is a good exercise to learn the nuances between tx.origin and msg.sender and why you should never use tx.origin for authentication purposes:
+// SPDX-License-Identifier: MIT pragma solidity ^0.6.0; contract Telephone { address public owner; constructor() public { owner = msg.sender; } function changeOwner(address _owner) public { if (tx.origin != msg.sender) { owner = _owner; } } } Solidity has a global variable, tx.</description>
+    </item>
+    
     <item>
       <title>Ethernaut - Level 03 - Coinflip</title>
       <link>https://securitypills.github.io/articles/ethernaut-3-coinflip/</link>

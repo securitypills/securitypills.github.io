@@ -47,7 +47,7 @@ Ethernaut is OpenZeppelin Web3/Solidity based wargame to learn about Ethereum sm
 Although the game was launched few years ago it has become a good place to start for those who are interested on security and smart contracts.
 Challenges are currently running on the Rinkeby testnet and you will require to use a Rinkey Faucet to get free testnet ETH and test the smart contracts."><meta itemprop="datePublished" content="2022-08-03T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-08-03T00:00:00+00:00" />
-<meta itemprop="wordCount" content="377">
+<meta itemprop="wordCount" content="437">
 <meta itemprop="keywords" content="" />
 
   <meta itemprop="name" content="Ethernaut Challenges">
@@ -56,7 +56,7 @@ Ethernaut is OpenZeppelin Web3/Solidity based wargame to learn about Ethereum sm
 Although the game was launched few years ago it has become a good place to start for those who are interested on security and smart contracts.
 Challenges are currently running on the Rinkeby testnet and you will require to use a Rinkey Faucet to get free testnet ETH and test the smart contracts."><meta itemprop="datePublished" content="2022-08-03T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-08-03T00:00:00+00:00" />
-<meta itemprop="wordCount" content="377">
+<meta itemprop="wordCount" content="437">
 <meta itemprop="keywords" content="" />
 </head><body class="flex relative h-full min-h-screen"><aside
   class="will-change-transform transform transition-transform -translate-x-full absolute top-0 left-0 md:relative md:translate-x-0 w-3/4 md:w-60 h-full min-h-screen p-3 bg-slate-50 dark:bg-slate-800 border-r border-slate-200 dark:border-slate-700 flex flex-col gap-2.5 z-20 sidebar">
@@ -163,6 +163,19 @@ Challenges are currently running on the Rinkeby testnet and you will require to 
     <div class="space-y-2.5">
       
       <a class="block px-3 py-4  hover:bg-slate-200 dark:hover:bg-slate-700 "
+        href="/articles/ethernaut-4-telephone/">
+        
+        
+        <h3 class="text-lg font-semibold mb-0.5">Ethernaut - Level 04 - Telephone</h3>
+        <div
+          class="text-sm  text-slate-500 dark:text-slate-400  line-clamp-2">
+          Image courtesy of OpenZeppelin
+Ethernaut 04 - Telephone This level from Ethernaut, called Telephone, is a good exercise to learn the nuances between tx.origin and msg.sender and why you should never use tx.origin for authentication purposes:
+// SPDX-License-Identifier: MIT pragma solidity ^0.6.0; contract Telephone { address public owner; constructor() public { owner = msg.sender; } function changeOwner(address _owner) public { if (tx.origin != msg.sender) { owner = _owner; } } } Solidity has a global variable, tx.
+        </div>
+      </a>
+      
+      <a class="block px-3 py-4  hover:bg-slate-200 dark:hover:bg-slate-700 "
         href="/articles/ethernaut-3-coinflip/">
         
         
@@ -251,6 +264,9 @@ Ethernaut 02 - Fallout The goal for this level is to claim ownership of the cont
 <h3 id="0x3-coinflip">0x3 Coinflip</h3>
 <p>The goal in this challenge is to guess the coin flip ten times in a row. The contract uses the previous blockhash as the flip outcome. This challenge can be solved by creating a similar contract that mimics the same coin flipping logic and calls Ethernaut&rsquo;s original contract with the result obtained.</p>
 <p>You can read a walkthrough for this challenge <a href="../ethernaut-3-coinflip" >here</a>.</p>
+<h3 id="0x4-telephone">0x4 Telephone</h3>
+<p>The idea behind this challnge is to call the <code>changeOwner</code> function from a smart contract. So <code>msg.sender</code> will be the helper contract address while <code>tx.origin</code> will always refers to the address who started the original transaction. Once <code>tx.origin != msg.sender</code> is true, you will become the contract&rsquo;s new owner.</p>
+<p>You can read a walkthrough for this challenge <a href="../ethernaut-4-telephone" >here</a>.</p>
 
     </article>
   </div>

