@@ -47,7 +47,7 @@ Ethernaut is OpenZeppelin Web3/Solidity based wargame to learn about Ethereum sm
 Although the game was launched few years ago it has become a good place to start for those who are interested on security and smart contracts.
 Challenges are currently running on the Rinkeby testnet and you will require to use a Rinkey Faucet to get free testnet ETH and test the smart contracts."><meta itemprop="datePublished" content="2022-08-03T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-08-03T00:00:00+00:00" />
-<meta itemprop="wordCount" content="437">
+<meta itemprop="wordCount" content="510">
 <meta itemprop="keywords" content="" />
 
   <meta itemprop="name" content="Ethernaut Challenges">
@@ -56,7 +56,7 @@ Ethernaut is OpenZeppelin Web3/Solidity based wargame to learn about Ethereum sm
 Although the game was launched few years ago it has become a good place to start for those who are interested on security and smart contracts.
 Challenges are currently running on the Rinkeby testnet and you will require to use a Rinkey Faucet to get free testnet ETH and test the smart contracts."><meta itemprop="datePublished" content="2022-08-03T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-08-03T00:00:00+00:00" />
-<meta itemprop="wordCount" content="437">
+<meta itemprop="wordCount" content="510">
 <meta itemprop="keywords" content="" />
 </head><body class="flex relative h-full min-h-screen"><aside
   class="will-change-transform transform transition-transform -translate-x-full absolute top-0 left-0 md:relative md:translate-x-0 w-3/4 md:w-60 h-full min-h-screen p-3 bg-slate-50 dark:bg-slate-800 border-r border-slate-200 dark:border-slate-700 flex flex-col gap-2.5 z-20 sidebar">
@@ -163,6 +163,19 @@ Challenges are currently running on the Rinkeby testnet and you will require to 
     <div class="space-y-2.5">
       
       <a class="block px-3 py-4  hover:bg-slate-200 dark:hover:bg-slate-700 "
+        href="/articles/ethernaut-5-token/">
+        
+        
+        <h3 class="text-lg font-semibold mb-0.5">Ethernaut - Level 05 - Token</h3>
+        <div
+          class="text-sm  text-slate-500 dark:text-slate-400  line-clamp-2">
+          Image courtesy of OpenZeppelin
+Ethernaut 05 - Token This level from Ethernaut, called Token, is a good exercise to become familiar with the integer underflow and integer overflow concepts. In this challenge you are given 20 tokens to start with and you will beat the level if you somehow manage to get your hands on any additional tokens. Preferably a very large number of tokens.
+// SPDX-License-Identifier: MIT pragma solidity ^0.
+        </div>
+      </a>
+      
+      <a class="block px-3 py-4  hover:bg-slate-200 dark:hover:bg-slate-700 "
         href="/articles/ethernaut-4-telephone/">
         
         
@@ -267,6 +280,9 @@ Ethernaut 02 - Fallout The goal for this level is to claim ownership of the cont
 <h3 id="0x4-telephone">0x4 Telephone</h3>
 <p>The idea behind this challnge is to call the <code>changeOwner</code> function from a smart contract. So <code>msg.sender</code> will be the helper contract address while <code>tx.origin</code> will always refers to the address who started the original transaction. Once <code>tx.origin != msg.sender</code> is true, you will become the contract&rsquo;s new owner.</p>
 <p>You can read a walkthrough for this challenge <a href="../ethernaut-4-telephone" >here</a>.</p>
+<h3 id="0x5-token">0x5 Token</h3>
+<p>The goal in this contract is to increase our balance. Despite there is a requirement that checks for potential overflows (<code>require(balances[msg.sender] - _vaalue &gt;= 0);</code>), we are dealing with unsigned integers which are known to be prone to overflow and underflow issues. To pass this challenge we will have to call the <code>transfer</code> method with an amount of tokens greater than 20.</p>
+<p>You can read aa walkthrough for this challenge <a href="../ethernaut-5-token" >here</a>.</p>
 
     </article>
   </div>

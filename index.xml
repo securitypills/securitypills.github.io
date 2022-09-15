@@ -6,7 +6,18 @@
     <description>Recent content on Security Pills</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 12 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://securitypills.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 15 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://securitypills.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ethernaut - Level 05 - Token</title>
+      <link>https://securitypills.github.io/articles/ethernaut-5-token/</link>
+      <pubDate>Thu, 15 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://securitypills.github.io/articles/ethernaut-5-token/</guid>
+      <description>Image courtesy of OpenZeppelin
+Ethernaut 05 - Token This level from Ethernaut, called Token, is a good exercise to become familiar with the integer underflow and integer overflow concepts. In this challenge you are given 20 tokens to start with and you will beat the level if you somehow manage to get your hands on any additional tokens. Preferably a very large number of tokens.
+// SPDX-License-Identifier: MIT pragma solidity ^0.</description>
+    </item>
+    
     <item>
       <title>Security Pills - Issue 12</title>
       <link>https://securitypills.github.io/portfolio/sp-issue-12/</link>
