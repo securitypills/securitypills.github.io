@@ -13,7 +13,7 @@
 
   <meta name="description" content="Image courtesy of OpenZeppelin
 Ethernaut 04 - Telephone This level from Ethernaut, called Telephone, is a good exercise to learn the nuances between tx.origin and msg.sender and why you should never use tx.origin for authentication purposes:
-// SPDX-License-Identifier: MIT pragma solidity ^0.6.0; contract Telephone { address public owner; constructor() public { owner = msg.sender; } function changeOwner(address _owner) public { if (tx.origin != msg.sender) { owner = _owner; } } } Solidity has a global variable, tx." /><meta name="generator" content="Hugo 0.102.3" />
+// SPDX-License-Identifier: MIT pragma solidity ^0.6.0; contract Telephone { address public owner; constructor() public { owner = msg.sender; } function changeOwner(address _owner) public { if (tx.origin != msg.sender) { owner = _owner; } } } Solidity has a global variable, tx." /><meta name="generator" content="Hugo 0.103.1" />
 
   <link rel="stylesheet" href="https://securitypills.github.io/css/main.css" />
 
@@ -156,6 +156,19 @@ Ethernaut 04 - Telephone This level from Ethernaut, called Telephone, is a good 
       <h2 class="font-bold mb-5 py-1 pl-12 pr-3 md:px-3">Articles</h2>
     </a>
     <div class="space-y-2.5">
+      
+      <a class="block px-3 py-4  hover:bg-slate-200 dark:hover:bg-slate-700 "
+        href="/articles/ethernaut-6-delegation/">
+        
+        
+        <h3 class="text-lg font-semibold mb-0.5">Ethernaut - Level 06 - Delegation</h3>
+        <div
+          class="text-sm  text-slate-500 dark:text-slate-400  line-clamp-2">
+          Image courtesy of OpenZeppelin
+Ethernaut 06 - Delegation This level from Ethernaut, Delegation, is about a special Solidity method called delegatecall(). To complete this level we must understand how this low level function works, how it can be used to delegate operations to on-chain libraries, and what implications it has on execution scope.
+// SPDX-License-Identifier: MIT pragma solidity ^0.6.0; contract Delegate { address public owner; constructor(address _owner) public { owner = _owner; } function pwn() public { owner = msg.
+        </div>
+      </a>
       
       <a class="block px-3 py-4  hover:bg-slate-200 dark:hover:bg-slate-700 "
         href="/articles/ethernaut-5-token/">

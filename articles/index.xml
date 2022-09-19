@@ -6,7 +6,18 @@
     <description>Recent content in Articles on Security Pills</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 15 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://securitypills.github.io/articles/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 16 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://securitypills.github.io/articles/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ethernaut - Level 06 - Delegation</title>
+      <link>https://securitypills.github.io/articles/ethernaut-6-delegation/</link>
+      <pubDate>Fri, 16 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://securitypills.github.io/articles/ethernaut-6-delegation/</guid>
+      <description>Image courtesy of OpenZeppelin
+Ethernaut 06 - Delegation This level from Ethernaut, Delegation, is about a special Solidity method called delegatecall(). To complete this level we must understand how this low level function works, how it can be used to delegate operations to on-chain libraries, and what implications it has on execution scope.
+// SPDX-License-Identifier: MIT pragma solidity ^0.6.0; contract Delegate { address public owner; constructor(address _owner) public { owner = _owner; } function pwn() public { owner = msg.</description>
+    </item>
+    
     <item>
       <title>Ethernaut - Level 05 - Token</title>
       <link>https://securitypills.github.io/articles/ethernaut-5-token/</link>
