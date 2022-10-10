@@ -6,7 +6,16 @@
     <description>Recent content in Articles on Security Pills</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 16 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://securitypills.github.io/articles/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 10 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://securitypills.github.io/articles/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Security Pills - Issue 17</title>
+      <link>https://securitypills.github.io/articles/spppp/</link>
+      <pubDate>Mon, 10 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://securitypills.github.io/articles/spppp/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Ethernaut - Level 06 - Delegation</title>
       <link>https://securitypills.github.io/articles/ethernaut-6-delegation/</link>
