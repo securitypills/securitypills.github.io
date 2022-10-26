@@ -312,7 +312,7 @@ Ethernaut 02 - Fallout The goal for this level is to claim ownership of the cont
 <h3 id="0x6-delegation">0x6 Delegation</h3>
 <p>This challenge consists of a delegation contract that forwards any calls using <code>delegatecall</code> in its <code>fallback</code> function to a <code>Delegate</code> contract. To complete this challenge we must get familiar with the <code>delegatecall</code> instruction and understand that the call performed heere is executed in the caller&rsquo;s context, thus the <code>Delegate</code> contract will access the <code>Delegation</code> owner storage variable and <code>msg.sender</code>. To pass this challenge you simply need to call the <code>pwn()</code> function in th <code>Delegation</code> contract, despite it doesn&rsquo;t exist.</p>
 <p>You can read a walkthrough for this challenge <a href="../ethernaut-6-delegation" >here</a>.</p>
-<h3 id="0x7-forcee">0x7 Forcee</h3>
+<h3 id="0x7-force">0x7 Force</h3>
 <p>The purpose of this challenge is to send ether to the contract. Sending ether to a contract requires a <code>fallback</code> function to be implemented, however, one can force-send ether by calling the <code>selfdestruct</code> instruction on a contract containing ether.</p>
 <p>You can read a walkthrough for this challenge <a href="../ethernaut-7-force" >here</a>.</p>
 
