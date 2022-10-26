@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Sponsor on Security Pills</title>
+    <title>Sponsorship the Newsletter on Security Pills</title>
     <link>https://securitypills.github.io/sponsor/</link>
-    <description>Recent content in Sponsor on Security Pills</description>
+    <description>Recent content in Sponsorship the Newsletter on Security Pills</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://securitypills.github.io/sponsor/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Wed, 26 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://securitypills.github.io/sponsor/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

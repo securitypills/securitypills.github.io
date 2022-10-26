@@ -6,7 +6,18 @@
     <description>Recent content in Articles on Security Pills</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 16 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://securitypills.github.io/articles/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 26 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://securitypills.github.io/articles/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ethernaut - Level 07 - Force</title>
+      <link>https://securitypills.github.io/articles/ethernaut-7-force/</link>
+      <pubDate>Wed, 26 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://securitypills.github.io/articles/ethernaut-7-force/</guid>
+      <description>Image courtesy of OpenZeppelin
+Ethernaut 07 - Force This level from Ethernaut, Force, provides us with an empty smart contract containing only some ASCII-art. The goal here is to send some ether to the contract using the selfdestruct() instruction.
+# Level 07 - Force ### Source Code // SPDX-License-Identifier: MIT pragma solidity ^0.6.0; contract Force {/* MEOW ? /\\_/\\ / ____/ o o \\ /~____ =ø= / (______)__m_m) */} Before explaining why this smart contract is vulnerable, let&amp;rsquo;s get familiarized with the function selfdestruct().</description>
+    </item>
+    
     <item>
       <title>Ethernaut - Level 06 - Delegation</title>
       <link>https://securitypills.github.io/articles/ethernaut-6-delegation/</link>
