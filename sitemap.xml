@@ -2,20 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://securitypills.github.io/portfolio/</loc>
+    <lastmod>2022-10-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://securitypills.github.io/</loc>
+    <lastmod>2022-10-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://securitypills.github.io/portfolio/sp-issue-19/</loc>
+    <lastmod>2022-10-31T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://securitypills.github.io/articles/</loc>
     <lastmod>2022-10-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://securitypills.github.io/articles/ethernaut-7-force/</loc>
     <lastmod>2022-10-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://securitypills.github.io/</loc>
-    <lastmod>2022-10-26T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://securitypills.github.io/sponsor/</loc>
     <lastmod>2022-10-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://securitypills.github.io/portfolio/</loc>
-    <lastmod>2022-10-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://securitypills.github.io/portfolio/sp-issue-18/</loc>
     <lastmod>2022-10-24T00:00:00+00:00</lastmod>

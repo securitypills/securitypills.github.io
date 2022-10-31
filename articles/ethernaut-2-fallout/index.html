@@ -13,7 +13,7 @@
 
   <meta name="description" content="Image courtesy of OpenZeppelin
 Ethernaut 02 - Fallout The goal for this level is to claim ownership of the contract, which has the following implementation:
-// SPDX-License-Identifier: MIT pragma solidity ^0.6.0; import &#39;@openzeppelin/contracts/math/SafeMath.sol&#39;; contract Fallout { using SafeMath for uint256; mapping (address =&gt; uint) allocations; address payable public owner; /* constructor */ function Fal1out() public payable { owner = msg.sender; allocations[owner] = msg.value; } modifier onlyOwner { require( msg.sender == owner, &#34;caller is not the owner&#34; ); _; } function allocate() public payable { allocations[msg." /><meta name="generator" content="Hugo 0.104.3" />
+// SPDX-License-Identifier: MIT pragma solidity ^0.6.0; import &#39;@openzeppelin/contracts/math/SafeMath.sol&#39;; contract Fallout { using SafeMath for uint256; mapping (address =&gt; uint) allocations; address payable public owner; /* constructor */ function Fal1out() public payable { owner = msg.sender; allocations[owner] = msg.value; } modifier onlyOwner { require( msg.sender == owner, &#34;caller is not the owner&#34; ); _; } function allocate() public payable { allocations[msg." /><meta name="generator" content="Hugo 0.105.0">
 
   <link rel="stylesheet" href="https://securitypills.github.io/css/main.css" />
 
