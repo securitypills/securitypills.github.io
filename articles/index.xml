@@ -6,7 +6,19 @@
     <description>Recent content in Articles on Security Pills</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 26 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://securitypills.github.io/articles/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 28 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://securitypills.github.io/articles/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reverse Engineering a Smart Contract</title>
+      <link>https://securitypills.github.io/articles/reverse-engineering-a-smart-contract/</link>
+      <pubDate>Mon, 28 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://securitypills.github.io/articles/reverse-engineering-a-smart-contract/</guid>
+      <description>Image courtesy of OpenZeppelin
+Reverse Engineering a smart-contract NTM: Write an introductory paragraph here
+Verified contracts on Etherscan Everything in the blockchain is verifiable, consistent and can be publicly accessible. Every smart contract should have their source code published and verified in Etherscan, or any other blockchain used for its deployment.
+For instance, using a testing smart contract deployed at address 0x4cD4AD48e22EdfC8a43B8cb26d0Ac9ceeB9E75f1 in the Goerli network, we could easily recover its source code by checking the Contract tab in Ethernaut:</description>
+    </item>
+    
     <item>
       <title>Ethernaut - Level 07 - Force</title>
       <link>https://securitypills.github.io/articles/ethernaut-7-force/</link>
