@@ -3,10 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://securitypills.github.io/portfolio/</loc>
-    <lastmod>2022-12-26T00:00:00+00:00</lastmod>
+    <lastmod>2023-01-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://securitypills.github.io/</loc>
-    <lastmod>2022-12-26T00:00:00+00:00</lastmod>
+    <lastmod>2023-01-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://securitypills.github.io/portfolio/sp-issue-28/</loc>
+    <lastmod>2023-01-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://securitypills.github.io/portfolio/sp-issue-27/</loc>
     <lastmod>2022-12-26T00:00:00+00:00</lastmod>
@@ -19,12 +22,6 @@
   </url><url>
     <loc>https://securitypills.github.io/portfolio/sp-issue-24/</loc>
     <lastmod>2022-12-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://securitypills.github.io/articles/</loc>
-    <lastmod>2022-11-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://securitypills.github.io/articles/reverse-engineering-a-smart-contract/</loc>
-    <lastmod>2022-11-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://securitypills.github.io/portfolio/sp-issue-23/</loc>
     <lastmod>2022-11-28T00:00:00+00:00</lastmod>
@@ -40,6 +37,9 @@
   </url><url>
     <loc>https://securitypills.github.io/portfolio/sp-issue-19/</loc>
     <lastmod>2022-10-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://securitypills.github.io/articles/</loc>
+    <lastmod>2022-10-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://securitypills.github.io/articles/ethernaut-7-force/</loc>
     <lastmod>2022-10-26T00:00:00+00:00</lastmod>
