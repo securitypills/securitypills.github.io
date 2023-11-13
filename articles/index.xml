@@ -6,96 +6,81 @@
     <description>Recent content in Articles on Security Pills</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 26 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://securitypills.github.io/articles/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 26 Oct 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://securitypills.github.io/articles/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ethernaut - Level 07 - Force</title>
       <link>https://securitypills.github.io/articles/ethernaut-7-force/</link>
       <pubDate>Wed, 26 Oct 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://securitypills.github.io/articles/ethernaut-7-force/</guid>
       <description>Image courtesy of OpenZeppelin
 Ethernaut 07 - Force This level from Ethernaut, Force, provides us with an empty smart contract containing only some ASCII-art. The goal here is to send some ether to the contract using the selfdestruct() instruction.
 # Level 07 - Force ### Source Code // SPDX-License-Identifier: MIT pragma solidity ^0.6.0; contract Force {/* MEOW ? /\\_/\\ / ____/ o o \\ /~____ =ø= / (______)__m_m) */} Before explaining why this smart contract is vulnerable, let&amp;rsquo;s get familiarized with the function selfdestruct().</description>
     </item>
-    
     <item>
       <title>Ethernaut - Level 06 - Delegation</title>
       <link>https://securitypills.github.io/articles/ethernaut-6-delegation/</link>
       <pubDate>Fri, 16 Sep 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://securitypills.github.io/articles/ethernaut-6-delegation/</guid>
       <description>Image courtesy of OpenZeppelin
 Ethernaut 06 - Delegation This level from Ethernaut, Delegation, is about a special Solidity method called delegatecall(). To complete this level, we must understand how this low level function works, how it can be used to delegate operations to on-chain libraries, and what implications it has on execution scope.
 // SPDX-License-Identifier: MIT pragma solidity ^0.6.0; contract Delegate { address public owner; constructor(address _owner) public { owner = _owner; } function pwn() public { owner = msg.</description>
     </item>
-    
     <item>
       <title>Ethernaut - Level 05 - Token</title>
       <link>https://securitypills.github.io/articles/ethernaut-5-token/</link>
       <pubDate>Thu, 15 Sep 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://securitypills.github.io/articles/ethernaut-5-token/</guid>
       <description>Image courtesy of OpenZeppelin
 Ethernaut 05 - Token This level from Ethernaut, called Token, is a good exercise to become familiar with the integer underflow and integer overflow concepts. In this challenge you are given 20 tokens to start with and you will beat the level if you somehow manage to get your hands on any additional tokens. Preferably a very large number of tokens.
 // SPDX-License-Identifier: MIT pragma solidity ^0.</description>
     </item>
-    
     <item>
       <title>Ethernaut - Level 04 - Telephone</title>
       <link>https://securitypills.github.io/articles/ethernaut-4-telephone/</link>
       <pubDate>Wed, 24 Aug 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://securitypills.github.io/articles/ethernaut-4-telephone/</guid>
       <description>Image courtesy of OpenZeppelin
 Ethernaut 04 - Telephone This level from Ethernaut, called Telephone, is a good exercise to learn the nuances between tx.origin and msg.sender and why you should never use tx.origin for authentication purposes:
 // SPDX-License-Identifier: MIT pragma solidity ^0.6.0; contract Telephone { address public owner; constructor() public { owner = msg.sender; } function changeOwner(address _owner) public { if (tx.origin != msg.sender) { owner = _owner; } } } Solidity has a global variable, tx.</description>
     </item>
-    
     <item>
       <title>Ethernaut - Level 03 - Coinflip</title>
       <link>https://securitypills.github.io/articles/ethernaut-3-coinflip/</link>
       <pubDate>Thu, 11 Aug 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://securitypills.github.io/articles/ethernaut-3-coinflip/</guid>
       <description>Image courtesy of OpenZeppelin
 Ethernaut 03 - Coinflip The third level in Ethernaut, CoinFlip, is a good exercise that will teach you how to exploit pseudo randomness implementations in smart contracts. This contract will require you to correctly guess the outcome of a coin flip ten times in a row:
 // SPDX-License-Identifier: MIT pragma solidity ^0.6.0; import &amp;#39;@openzeppelin/contracts/math/SafeMath.sol&amp;#39;; contract CoinFlip { using SafeMath for uint256; uint256 public consecutiveWins; uint256 lastHash; uint256 FACTOR = 57896044618658097711785492504343953926634992332820282019728792003956564819968; constructor() public { consecutiveWins = 0; } function flip(bool _guess) public returns (bool) { uint256 blockValue = uint256(blockhash(block.</description>
     </item>
-    
     <item>
       <title>Ethernaut Challenges</title>
       <link>https://securitypills.github.io/articles/ethernaut/</link>
       <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://securitypills.github.io/articles/ethernaut/</guid>
       <description>Please read This is a work in progress article that will receive updates as we continue publishing detailed walkthroughs for each level.
 Ethernaut is OpenZeppelin Web3/Solidity based wargame to learn about Ethereum smart contract security and become familiar with programming principles in Solidity.
 Although the game was launched few years ago it has become a good place to start for those who are interested on security and smart contracts.
 Challenges are currently running on the Rinkeby testnet and you will require to use a Rinkey Faucet to get free testnet ETH and test the smart contracts.</description>
     </item>
-    
     <item>
       <title>Ethernaut - Level 01 - Fallback</title>
       <link>https://securitypills.github.io/articles/ethernaut-1-fallback/</link>
       <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://securitypills.github.io/articles/ethernaut-1-fallback/</guid>
       <description>Image courtesy of OpenZeppelin
 Ethernaut 01 - Fallback The first level from Ethernaut is pretty straightforward and we will use it to become familiar with some Solidity concepts and the Brownie framework that we will use to complete this challenge.
 The code for the smart contract that we must exploit is shown above:
 // SPDX-License-Identifier: MIT pragma solidity ^0.6.0; import &amp;#39;@openzeppelin/contracts/math/SafeMath.sol&amp;#39;; contract Fallback { using SafeMath for uint256; mapping(address =&amp;gt; uint) public contributions; address payable public owner; constructor() public { owner = msg.</description>
     </item>
-    
     <item>
       <title>Ethernaut - Level 02 - Fallout</title>
       <link>https://securitypills.github.io/articles/ethernaut-2-fallout/</link>
       <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://securitypills.github.io/articles/ethernaut-2-fallout/</guid>
       <description>Image courtesy of OpenZeppelin
 Ethernaut 02 - Fallout The goal for this level is to claim ownership of the contract, which has the following implementation:
 // SPDX-License-Identifier: MIT pragma solidity ^0.6.0; import &amp;#39;@openzeppelin/contracts/math/SafeMath.sol&amp;#39;; contract Fallout { using SafeMath for uint256; mapping (address =&amp;gt; uint) allocations; address payable public owner; /* constructor */ function Fal1out() public payable { owner = msg.sender; allocations[owner] = msg.value; } modifier onlyOwner { require( msg.sender == owner, &amp;#34;caller is not the owner&amp;#34; ); _; } function allocate() public payable { allocations[msg.</description>
     </item>
-    
   </channel>
 </rss>
